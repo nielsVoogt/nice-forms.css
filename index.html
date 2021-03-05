@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./scss/nice-forms.scss">
+</head>
+<body>
+
+
+  <br>
+  <br>
+  <br>
+
+  <h1>Fieldset with input[type="radio"]</h1>
+
+  <fieldset>
+    <legend>Select your preffered framwork</legend>
+    <nf-form-group>
+      <input type="radio" name="radio" id="react">
+      <label for="react">React</label>
+    </nf-form-group>
+  
+    <nf-form-group>
+      <input type="radio" name="radio" id="vue">
+      <label for="vue">Vue</label>
+    </nf-form-group>
+
+    <nf-form-group>
+      <input type="radio" name="radio" id="angular">
+      <label for="angular">Angular</label>
+    </nf-form-group>
+  </fieldset>
+
+  <br>
+  <br>
+  <br>
+
+  <h1>Fieldset with input[type="checkbox"]</h1>
+
+  <fieldset>
+    <legend>Select your favorite languages</legend>
+    <nf-form-group>
+      <input type="checkbox" id="css">
+      <label for="css">CSS</label>
+    </nf-form-group>
+  
+    <nf-form-group>
+      <input type="checkbox" id="html">
+      <label for="html">HTML</label>
+    </nf-form-group>
+
+    <nf-form-group>
+      <input type="checkbox" id="js">
+      <label for="js">Javascript</label>
+    </nf-form-group>
+  </fieldset>
+
+
+  <br>
+  <br>
+  <br>
+  
+    <nf-form-group>
+      <input type="checkbox" id="check-1">
+      <label for="check-1">Checkbox label</label>
+    </nf-form-group>
+
+    <nf-form-group>
+      <input type="checkbox" id="check-2">
+      <label for="check-2">
+        Checkbox label
+        <small>I am additional</small>
+      </label>
+    </nf-form-group>
+
+  <br>
+  <br>
+  <br>
+
+  <h1>Additional field information</h1>
+
+  <nf-form-group>
+    <label>My form group label</label>
+    <small>I can have additional text above</small>
+    <input type="text" placeholder="Your name">
+  </nf-form-group>
+
+  <nf-form-group>
+    <label>My form group label</label>
+    <input type="text" placeholder="Your name">
+    <small>Or additional text below</small>
+  </nf-form-group>
+  
+  <br>
+  <br>
+  <br>
+
+  <nf-form-group>
+    <label>Input type text</label>
+    <input type="text" disabled placeholder="Your name" value="">
+  </nf-form-group>
+
+  <br>
+  <br>
+  <br>
+
+  <h1>input[type="password"]</h1>
+
+  <nf-form-group>
+    <label>Password</label>
+    <input type="password" placeholder="Your password">
+  </nf-form-group>
+
+  <nf-form-group>
+    <label>Password with icon left</label>
+    <input type="password" placeholder="Your password" class="icon-left">
+  </nf-form-group>
+
+  <nf-form-group>
+    <label>Password with icon right</label>
+    <input type="password" placeholder="Your password" class="icon-right">
+  </nf-form-group>
+
+
+  <br>
+  <br>
+  <br>
+
+  <h1>:valid and :invalid</h1>
+
+  <nf-form-group>
+    <label>Invalid</label>
+    <input type="email" placeholder="Your email" value="invalid-value" required>
+  </nf-form-group>
+
+  <nf-form-group>
+    <label>Valid</label>
+    <input type="email" placeholder="Your email" value="n.voogt@gmail.com" required>
+  </nf-form-group>
+
+  <br>
+  <br>
+  <br>
+
+  <h1>Range</h1>
+
+  <nf-form-group>
+    <label>Range</label>
+    <input type=range min=0 max=15>
+  </nf-form-group>
+
+  <nf-form-group>
+    <label>Range</label>
+    <input type="file">
+  </nf-form-group>
+
+
+  <nf-form-group>
+    <label>Textarea</label>
+    <textarea rows="5" value=""></textarea>
+  </nf-form-group>
+
+
+
+  <nf-form-group>
+    <label>Select</label>
+    <select>
+      <option>Please select a value</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </select>
+  </nf-form-group>
+
+  <nf-form-group>
+    <label>Input type text</label>
+    <input type="date" >
+  </nf-form-group>
+
+  <nf-form-group>
+    <label>Input type colort</label>
+    <input type="color" >
+  </nf-form-group>
+
+  <!-- 
+    <div class="element">
+      <input>
+      <input disabled="">
+    </div>
+
+    <div class="element">
+      <form><input required=""><input type="submit"></form>
+      <div class="disabled-el"><form><input required="" disabled=""><input type="submit" disabled=""></form></div>
+    </div>
+
+    <div class="element">
+      <input type="text">
+      <input type="text" disabled="">
+    </div>
+
+    <div class="element">
+      <textarea></textarea>
+      <textarea disabled=""></textarea>
+    </div>
+
+
+
+
+    <div class="element">
+      <input type="password" placeholder="password">
+      <div class="disabled-el"><input type="password" placeholder="password" disabled=""></div>
+    </div>
+    
+    <div class="element">
+      <input type="radio">
+      <div class="disabled-el"><input type="radio" disabled=""></div>
+    </div>
+
+    <div class="element">
+      <input type="radio" checked="">
+      <div class="disabled-el"><input type="radio" checked="" disabled=""></div>
+    </div>
+
+    <div class="element">
+      <input type="checkbox">
+      <div class="disabled-el"><input type="checkbox" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=checkbox&gt;</code></pre>
+    </div>
+
+    <div class="element">
+      <input type="checkbox" checked="">
+      <div class="disabled-el"><input type="checkbox" checked="" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=checkbox checked&gt;</code></pre>
+    </div>
+
+    <div class="element">
+      <select><option></option><option>Option 1</option></select>
+      <div class="disabled-el"><select disabled=""><option></option><option>Option 1</option></select></div>
+<pre><code class="markup language-markup">
+&lt;select&gt;
+&lt;option&gt;&lt;/option&gt;
+&lt;option&gt;Option 1&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+    </div>
+
+    <div class="element">
+      <select><optgroup label="Option group 1"><option>Option 1</option><option>Option 2</option></optgroup><optgroup><option>Option 3</option></optgroup></select>
+      <div class="disabled-el"><select disabled=""><optgroup label="Option group 1"><option>Option 1</option><option>Option 2</option></optgroup><optgroup><option>Option 3</option></optgroup></select></div>
+<pre><code class="markup language-markup">
+&lt;select&gt;
+&lt;optgroup label="Option group 1"&gt;
+&lt;option&gt;Option 1&lt;/option&gt;
+&lt;option&gt;Option 2&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;optgroup&gt;
+&lt;option&gt;Option 3&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+
+    </div>
+
+    <div class="element">
+      <input type="text" placeholder="placeholder">
+      <div class="disabled-el"><input type="text" placeholder="placeholder" disabled=""></div>
+    </div>
+
+    <div class="element">
+      <input type="search">
+      <div class="disabled-el"><input type="search" disabled=""></div>
+    </div>
+
+    <div class="element">
+      <input type="file">
+      <div class="disabled-el"><input type="file" disabled=""></div>
+    </div>
+
+    <div class="element">
+      <fieldset><legend>Legend</legend><label for="field">Label</label><input id="field"></fieldset>
+      <div class="disabled-el"><fieldset><legend>Legend</legend><label for="field">Label</label><input id="field" disabled=""></fieldset></div>
+    </div>
+
+
+    <div class="element">
+      <input type="submit">
+      <div class="disabled-el"><input type="submit" disabled=""></div>
+    </div>
+
+    <div class="element">
+      <button>Button</button>
+      <div class="disabled-el"><button disabled="">Button</button></div>
+      <pre><code class="markup language-markup">&lt;button&gt;Button&lt;/button&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="reset">
+      <div class="disabled-el"><input type="reset" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=reset&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="email">
+      <div class="disabled-el"><input type="email" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=email&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="tel">
+      <div class="disabled-el"><input type="tel" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=tel&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="url">
+      <div class="disabled-el"><input type="url" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=url&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="number">
+      <div class="disabled-el"><input type="number" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=number&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="number" min="0" max="15" step="3">
+      <div class="disabled-el"><input type="number" min="0" max="15" step="3" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=number min=0 max=15 step=3&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="range">
+      <div class="disabled-el"><input type="range" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=range&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="range" min="0" max="15" step="3">
+      <div class="disabled-el"><input type="range" min="0" max="15" step="3" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=range min=0 max=15 step=3&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="date">
+      <div class="disabled-el"><input type="date" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=date&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="month">
+      <div class="disabled-el"><input type="month" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=month&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="week">
+      <div class="disabled-el"><input type="week" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=week&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="time">
+      <div class="disabled-el"><input type="time" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=time&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="datetime">
+      <div class="disabled-el"><input type="datetime" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=datetime&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="datetime-local">
+      <div class="disabled-el"><input type="datetime-local" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=datetime-local&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="color">
+      <div class="disabled-el"><input type="color" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=color&gt;</code></pre>
+    </div>
+    <div class="element">
+      <input type="color" value="#ff3d3d">
+      <div class="disabled-el"><input type="color" value="#ff3d3d" disabled=""></div>
+      <pre><code class="markup language-markup">&lt;input type=color value="#ff3d3d"&gt;</code></pre>
+    </div>
+    <div class="element">
+      <progress max="100" value="66" id="progress-meter"></progress>
+      &nbsp;
+      <pre><code class="markup language-markup">&lt;progress max="100" value="<span id="progress-meter-value">66</span>"&gt;&lt;/progress&gt;</code></pre>
+    </div>
+    <div class="element">
+      <progress></progress>
+      &nbsp;
+      <pre><code class="markup language-markup">&lt;progress&gt;&lt;/progress&gt;</code></pre>
+    </div>
+    <div class="element">
+      <meter value="18" min="0" max="100" low="25" high="75" optimum="15" id="meter-meter"></meter>
+      &nbsp;
+      <pre><code class="markup language-markup">&lt;meter value="<span id="meter-meter-value">18</span>" min="0" max="100"<br> low="25" high="75" optimum="15"&gt;&lt;/meter&gt;</code></pre>
+    </div>
+  </div> -->
+
+
+</body>
+</html>
