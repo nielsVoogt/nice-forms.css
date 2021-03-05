@@ -1,10 +1,12 @@
 {
   "name": "card",
   "description": "A base CSS file for forms and input elements",
-  "main": "index.html",
   "author": "Niels Voogt <n.voogt@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.30.0"
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "node-sass": "^5.0.0"
   }
 }

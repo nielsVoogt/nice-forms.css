@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+html {
+  font-size: 16px;
+}
+
+// FEATHER - 16px width, 2 px stroke
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+  padding: 20px;
+}
+
+
+h1 {
+  font-weight: bold;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
