@@ -1,5 +1,5 @@
 # nice-forms.css
-####Your CSS base setup for forms and inputs
+#### Your CSS base setup for forms and inputs
 
 I like pretty forms and clean HTML 😄 That's why I created nice-forms.css. To help devs out who want to hit the ground running, but don't want to stare at those default input fields when doing so 💩
 
@@ -15,7 +15,7 @@ Installation
 - [ ] todo: NPM
 - [ ] todo: CDN
 
-####Tested on:
+#### Tested on:
 - Windows Edge
 - Windows Firefox
 - Windows Chrome
