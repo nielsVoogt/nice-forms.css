@@ -4,6 +4,7 @@
   "author": "Niels Voogt <n.voogt@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "sass": "^1.32.8"
   },
   "dependencies": {
