@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style/index.scss">
 </head>
 <body>
+  <main>
 
 
   <br>
@@ -32,6 +33,18 @@
       <label for="angular">Angular</label>
     </nf-form-group>
   </fieldset>
+
+  <br>
+  <br>
+  <br>
+
+  <nf-form-group>
+    <input type="radio" name="radio" id="x">
+    <label for="x">
+      Angular
+      <small>I am additional information regarding this field</small>
+    </label>
+  </nf-form-group>
 
   <br>
   <br>
@@ -71,7 +84,7 @@
       <input type="checkbox" id="check-2">
       <label for="check-2">
         Checkbox label
-        <small>I am additional</small>
+        <small>I am additional information regarding this field</small>
       </label>
     </nf-form-group>
 
@@ -179,12 +192,31 @@
   </nf-form-group>
 
   <nf-form-group>
+    <label>Input type text</label>
+    <input type="month" >
+  </nf-form-group>
+
+  <nf-form-group>
+    <label>Input type text</label>
+    <input type="week" >
+  </nf-form-group>
+
+  <nf-form-group>
+    <label>Input type text</label>
+    <input type="time" >
+  </nf-form-group>
+
+  <nf-form-group>
     <label>Input type colort</label>
     <input type="color" >
   </nf-form-group>
 
-  <!-- 
-    <div class="element">
+  <nf-form-group>
+    <label>Input type number</label>
+    <input type="number" placeholder="1234" >
+  </nf-form-group>
+
+    <!-- <div class="element">
       <input>
       <input disabled="">
     </div>
@@ -202,12 +234,12 @@
     <div class="element">
       <textarea></textarea>
       <textarea disabled=""></textarea>
-    </div>
+    </div> -->
 
 
 
 
-    <div class="element">
+    <!-- <div class="element">
       <input type="password" placeholder="password">
       <div class="disabled-el"><input type="password" placeholder="password" disabled=""></div>
     </div>
@@ -388,6 +420,7 @@
       <pre><code class="markup language-markup">&lt;meter value="<span id="meter-meter-value">18</span>" min="0" max="100"<br> low="25" high="75" optimum="15"&gt;&lt;/meter&gt;</code></pre>
     </div>
   </div> -->
+</main>
 
 
 </body>
