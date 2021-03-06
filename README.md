@@ -11,14 +11,8 @@ I like pretty forms and clean HTML 😄 That's why I created nice-forms.css. To 
 - Perfect for rapid prototyping - or tweak it and make it your own.
 - No hacks or unnecessary elements, pure semantics
 
-Installation
+### Installation
 - [ ] todo: NPM
 - [ ] todo: CDN
-
-#### Tested on:
-- Windows Edge
-- Windows Firefox
-- Windows Chrome
-- Android Chrome
 
 If you encounter a bug on any device or have suggestions for improvement, don't hesitate to open a bug report or pull request.
