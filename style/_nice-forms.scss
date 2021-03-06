@@ -1,15 +1,144 @@
+<<<<<<< HEAD:style/_nice-forms.scss
+=======
+@import "reset";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+html {
+  font-size: 16px;
+}
+
+// FEATHER - 16px width, 2 px stroke
+
+body {
+  -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+  padding: 20px;
+  background: #dbdde8;
+  font-family: 'Roboto', sans-serif;
+  color: #4B5563;
+}
+
+main {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  margin: 2.5em 0;
+}
+
+section {
+  background: #ffffff;
+  padding: 2em;
+  border-radius: .75rem;
+  line-height: 1.6;
+  overflow: hidden;
+  margin-top: 2rem;
+  position: relative;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.008),
+              0 6.7px 5.3px rgba(0, 0, 0, 0.012),
+              0 12.5px 10px rgba(0, 0, 0, 0.015),
+              0 22.3px 17.9px rgba(0, 0, 0, 0.018),
+              0 41.8px 33.4px rgba(0, 0, 0, 0.022),
+              0 100px 80px rgba(0, 0, 0, 0.03);
+
+  details {
+    margin-top: 1.5em;
+    background: #f1f1f1;
+    margin: -2em;
+    margin-top: 2em;
+    padding: 1.5em 2em;
+
+    .gist {
+      margin-top: 1.5em;
+    }
+
+    .toggle-code {
+      display: inline-block;
+      padding: .5em 1em;
+      border-radius: 5px;
+      font-size: .875rem;
+      background: #10B981;
+      top: 1em;
+      right: 1em;
+      color: white;
+      font-weight: 500;
+      user-select: none;
+      cursor: pointer;
+      
+      svg {
+        display: inline-block;
+        vertical-align: -15%;
+        margin-right: .25em;
+      }
+    }
+
+    summary {
+      outline: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: black;
+    margin-bottom: .75rem;
+  }
+
+  p {
+    font-size: .875rem;
+    margin-bottom: 1.5rem;
+
+    code {
+      font-weight: 500;
+      font-family: Consolas, monaco, monospace;
+      position: relative;
+      z-index: 1;
+      margin: 0 2px;
+      background: #f3f4f4;
+      content: '';
+      border-radius: 3px;
+      padding: 2px 5px;
+      white-space: nowrap;
+    }
+  }
+}
+>>>>>>> bb50566... Worked on the demo:scss/nice-forms.scss
+
+
 
 //  ----------------- THE CSS
 
 :root {
 
-  // Sizing
+  // Input size - used for height/padding calculations
   --nf-input-size: 1rem;
+
+  --nf-input-font-size: .875rem;
   --nf-small-font-size: .875rem;
 
   // Font family
-  --nf-input-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  --nf-label-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --nf-input-font-family: 'Roboto', sans-serif;
+  --nf-label-font-family: 'Roboto', sans-serif;
 
   // Input
   --nf-input-color: #20242f;
@@ -18,7 +147,7 @@
   --nf-input-border-color: #c0c4c9;
   --nf-input-border-bottom-width: 2px;
   --nf-input-focus-border-color: #3b4ce2;
-  --nf-input-background-color: #f9f9f9;
+  --nf-input-background-color: #F9FAFB;
 
   // Valid/invalid
   --nf-invalid-input-border-color: red;
@@ -30,7 +159,8 @@
 
   // Label variables
   --nf-label-font-size: var(--nf-small-font-size);
-  --nf-label-color: #20242f;
+  --nf-label-color: #374151;
+  --nf-label-font-weight: 500;
   
   // Slider variables
   --nf-slider-track-background: rgba(0,0,0,.125);
@@ -43,43 +173,29 @@
 }
 
 fieldset {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 
-  legend {
-    font-weight: bold;
-    display: block;
-    color: var(--nf-label-color);
-    font-size: var(--nf-label-font-size);
-    font-family: var(--nf-label-font-family);
-    margin-bottom: calc(var(--nf-input-size) / 2);
-  }
-
-  > nf-form-group {
-    margin-top: .5rem;
-  }
 }
 
 
-nf-form-group {
+.nice-form-group {
   display: block;
   max-width: 600px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   position: relative;
+  line-height: 1;
 
   // ------------- LABEL
   
   > label {
-    font-weight: bold;
+    font-weight: var(--nf-label-font-weight);
     display: block;
     color: var(--nf-label-color);
     font-size: var(--nf-label-font-size);
     font-family: var(--nf-label-font-family);
     margin-bottom: .5rem;
 
-    + small {
-      
-      font-style: initial;
-    }
+    + small { font-style: initial; }
   }
 
   // ------------- SMALL
@@ -97,21 +213,39 @@ nf-form-group {
     }
   }
 
+  // ------------- LEGEND
+  
+  > legend {
+    font-weight: var(--nf-label-font-weight);
+    display: block;
+    color: var(--nf-label-color);
+    font-size: var(--nf-label-font-size);
+    font-family: var(--nf-label-font-family);
+    margin-bottom: calc(var(--nf-input-size) / 5);
+  }
+
+  > .nice-form-group {
+    margin-top: .5rem;
+  }
+
   > input[type="text"],
   > input[type="checkbox"],
   > input[type="radio"],
   > input[type="email"],
+  > input[type="tel"],
+  > input[type="url"],
   > input[type="password"],
   > input[type="number"],
   > input[type="date"],
   > input[type="week"],
   > input[type="time"],
   > input[type="month"],
+  > input[type="search"],
   > textarea,
   > select {
-    background: rgba(0,0,0,.025);
+    background: var(--nf-input-background-color);
     font-family: inherit;
-    font-size: var(--nf-input-size);
+    font-size: var(--nf-input-font-size);
     border-color: var(--nf-input-border-color);
     border-width: 1px;
     border-style: solid;
@@ -125,31 +259,29 @@ nf-form-group {
     padding: calc(var(--nf-input-size) * .75);
     height: calc(var(--nf-input-size) * 2.75);
     line-height: normal;
-    margin:  calc(var(--nf-input-size) / 4) 0;
+  
 
     // ------------- VALID/INVALID
 
     &:required {
 
-      &:invalid,
-      &:valid {
-        background-position: right calc(var(--nf-input-size) * .75) bottom 50%;
-        background-repeat: no-repeat;
-        background-size: var(--nf-input-size);
-      }
-
       &:invalid {
         background-color: var(--nf-invalid-input-background-color);
         border-color: var(--nf-invalid-input-border-color);
         color: var(--nf-invalid-input-color);
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='red' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-alert-triangle'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
+
+        &:focus {
+          background-color: var(--nf-input-background-color);
+          border-color: var(--nf-input-border-color);
+          color: var(--nf-input-color);
+          background-image: none;
+        }
       }
 
       &:valid {
         border-color: var(--nf-valid-input-border-color);
         background-color: var(--nf-valid-input-background-color);
         color: var(--nf-valid-input-color);
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='green' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
       }
     }
 
@@ -157,7 +289,7 @@ nf-form-group {
 
     &:disabled {
       cursor: not-allowed;
-      opacity: .5;
+      opacity: .75;
     }
 
     // -------- PLACEHOLDERS
@@ -173,20 +305,89 @@ nf-form-group {
     }
 
     + small {
-      margin-top: .25rem;
+      margin-top: .5rem;
     }
 
+    --icon-padding: calc(var(--nf-input-size) * 2.25);
+    --icon-background-offset: calc(var(--nf-input-size) * .75); 
+
     &.icon-left {
-      background-position: left calc(var(--nf-input-size) * .75) bottom 50%;
-      padding-left: calc(var(--nf-input-size) * 2.5);
+      background-position: left var(--icon-background-offset) bottom 50%;
+      padding-left: var(--icon-padding);
       background-size: var(--nf-input-size);
     }
 
     &.icon-right {
-      background-position: right calc(var(--nf-input-size) * .75) bottom 50%;
-      padding-right: calc(var(--nf-input-size) * 2.5);
+      background-position: right var(--icon-background-offset) bottom 50%;
+      padding-right: var(--icon-padding);
       background-size: var(--nf-input-size);
     }
+  }
+
+  // ------------ VALIDATION FOR FIELDS THAT ALLOW ICONS
+
+  > input[type="text"],
+  > input[type="email"],
+  > input[type="tel"],
+  > input[type="url"],
+  > input[type="password"] {
+    &:required {
+
+      &:invalid,
+      &:valid {
+        background-position: right calc(var(--nf-input-size) * .75) bottom 50%;
+        background-repeat: no-repeat;
+        background-size: var(--nf-input-size);
+      }
+
+      &:invalid {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='red' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-alert-triangle'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
+      }
+
+      &:valid {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='green' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  > input[type="search"] {
+     
+      &:placeholder-shown {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+        background-position: left calc(var(--nf-input-size) * .75) bottom 50%;
+        padding-left: calc(var(--nf-input-size) * 2.25);
+        background-size: var(--nf-input-size);
+        background-repeat: no-repeat;
+      }
+
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        width: var(--nf-input-size);
+        height: var(--nf-input-size);
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
+      }
+
+      &:focus {
+        padding-left: calc(var(--nf-input-size) * .75);
+        background-position: left calc(var(--nf-input-size) * -1) bottom 50%;
+      }
+  }
+
+  // -------- EMAIL
+
+  > input[type="email"][class^='icon'] {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-at-sign'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+  }
+
+  > input[type="tel"][class^='icon'] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-phone'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+  }
+
+  > input[type="url"][class^='icon'] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-link'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'/%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
   }
 
   // -------- PASSWORD
@@ -195,7 +396,7 @@ nf-form-group {
     letter-spacing: 2px;
 
     &[class^='icon'] {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-lock'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-lock'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
     }
   }
@@ -272,7 +473,11 @@ nf-form-group {
 
     &::-webkit-color-swatch-wrapper {
       padding: 5%;
+    }
 
+    &::-moz-color-swatch {
+      border-radius: calc(var(--nf-input-border-radius) / 2);
+      border: none;
     }
 
     &::-webkit-color-swatch {
@@ -293,7 +498,6 @@ nf-form-group {
   > input[type="week"],
   > input[type="time"],
   > input[type="month"] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-calendar'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
     background-position: right calc(var(--nf-input-size) * .75) bottom 50%;
     background-repeat: no-repeat;
     background-size: var(--nf-input-size);
@@ -306,6 +510,19 @@ nf-form-group {
       cursor: pointer;
     }
   }
+
+  > input[type="date"],
+  > input[type="week"],
+  > input[type="month"] {
+    min-width: 14em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-calendar'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
+  }
+
+  > input[type="time"] {
+    min-width: 6em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-clock'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
+  }
+
 
   // --------------- TEXAREA
 
@@ -373,16 +590,25 @@ nf-form-group {
     }
   }
 
+  // ---------------- SELECT
+
   > input[type="file"] {
     background: rgba(0,0,0,.025);
     padding: var(--nf-input-size);
     display: block;
     width: 100%;
     border-radius: var(--nf-input-border-radius);
-    border: 2px dashed var(--nf-input-border-color);
+    border: 1px dashed var(--nf-input-border-color);
+    outline: none;
+    cursor: pointer;
 
-    &::-webkit-file-upload-button {
-      background: #10B981;
+    &:focus {
+      border-color: var(--nf-input-focus-border-color);
+    }
+
+    &::-webkit-file-upload-button,
+    &::file-selector-button {
+      background: var(--nf-input-focus-border-color);
       border: 0;
       appearance: none;
       padding: .5rem;
@@ -390,14 +616,14 @@ nf-form-group {
       font-weight: bold;
       color: white;
       margin-right: 1rem;
-
+      outline: none;
     }
   }
 
   // ---------------- SELECT
 
   > select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
     background-position: right calc(var(--nf-input-size) * .75) bottom 50%;
     background-repeat: no-repeat;
     background-size: var(--nf-input-size);
