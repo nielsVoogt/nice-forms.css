@@ -1,10 +1,9 @@
-
 :root {
   // Input size - used for height/padding calculations
   --nf-input-size: 1rem;
 
-  --nf-input-font-size: calc(var(--nf-input-size) * .875);
-  --nf-small-font-size: calc(var(--nf-input-size) * .875);
+  --nf-input-font-size: calc(var(--nf-input-size) * 0.875);
+  --nf-small-font-size: calc(var(--nf-input-size) * 0.875);
 
   // Font family
   --nf-input-font-family: "Roboto", sans-serif;
@@ -35,8 +34,7 @@
   --nf-label-font-weight: 500;
 
   // Slider variables
-  --nf-slider-track-background: rgba(0, 0, 0, 0.125);
-  --nf-slider-track-focus-background: rgba(0, 0, 0, 0.35);
+  --nf-slider-track-background: #dfdfdf;
   --nf-slider-track-height: calc(var(--nf-input-size) / 3);
   --nf-slider-thumb-size: calc(var(--nf-input-size) * 1.25);
   --nf-slider-track-border-radius: var(--nf-slider-track-height);
@@ -75,7 +73,9 @@
     font-size: var(--nf-small-font-size);
     margin-bottom: 0.75rem;
 
-    &:last-child { margin-bottom: 0; }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   // ------------- LEGEND
@@ -340,14 +340,14 @@
       border-radius: var(--nf-slider-thumb-size);
       background: var(--nf-input-focus-border-color);
       border: var(--nf-slider-thumb-border-width) solid
-      var(--nf-slider-thumb-border-color);
+        var(--nf-slider-thumb-border-color);
       box-sizing: border-box;
     }
 
     &:focus::-moz-range-thumb {
       box-shadow: 0 0 0 3px white inset;
       border: var(--nf-slider-thumb-border-width) solid
-      var(--nf-slider-thumb-border-color);
+        var(--nf-slider-thumb-border-color);
     }
   }
 
@@ -511,11 +511,11 @@
     }
 
     &::file-selector-button {
-      @include button()
+      @include button();
     }
 
     &::-webkit-file-upload-button {
-      @include button()
+      @include button();
     }
   }
 
