@@ -7,550 +7,745 @@
     <link rel="stylesheet" href="./style/index.scss" />
   </head>
   <body>
-    <main>
-      <section>
-        <h1>Form group structure</h1>
-        <p>
-          All you need to do is add the class <code>.nice-form-group</code> to
-          get a nice base style for all your input fields. Add a
-          <code>small</code> element for additional information, this can be
-          below the label or below the field.
-        </p>
-
-        <div class="nice-form-group">
-          <label>Basic form group</label>
-          <input type="text" placeholder="Your name" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Basic form group</label>
-          <small>With additional information below the label</small>
-          <input type="text" placeholder="Your name" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>My form group label</label>
-          <input type="text" placeholder="Your name" />
-          <small>Or additional text below</small>
-        </div>
-
-        <details>
-          <summary>
-            <div class="toggle-code">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-code"
+    <div class="demo-page">
+      <div class="demo-page-navigation">
+        <nav>
+          <ul>
+            <li>
+              <a href="#intro">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                Nice forms
+                </a>
+            </li>
+            <li>
+              <a href="#installation">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-tool"
+                >
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                  />
+                </svg>
+                Installation</a
               >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              Toggle code
-            </div>
-          </summary>
-          <script src="https://gist.github.com/nielsVoogt/a00c2c8b6b7acfacce6d50926379e722.js"></script>
-        </details>
-      </section>
-
-      <section>
-        <h1>Checkbox and Radio</h1>
-        <p>
-          These are your basic <code>input[type="radio"]</code> and
-          <code>input[type="checkbox"]</code> elements. They have a label and
-          can contain secondary information by adding a
-          <code>small</code> element inside the <code>label</code>.
-        </p>
-
-        <fieldset class="nice-form-group">
-          <div class="nice-form-group">
-            <input type="radio" name="radio" id="r-1" />
-            <label for="r-1">Radio button with label</label>
-          </div>
-
-          <div class="nice-form-group">
-            <input type="radio" name="radio" id="r-2" />
-            <label for="r-2">
-              Radio button with label
-              <small>Radio can have additional information</small>
-            </label>
-          </div>
-        </fieldset>
-
-        <fieldset class="nice-form-group">
-          <div class="nice-form-group">
-            <input type="checkbox" id="check-1" />
-            <label for="check-1">Checkbox with label</label>
-          </div>
-
-          <div class="nice-form-group">
-            <input type="checkbox" id="check-2" />
-            <label for="check-2">
-              Checkbox with label
-              <small>I am additional information regarding this field</small>
-            </label>
-          </div>
-        </fieldset>
-
-        <details>
-          <summary>
-            <div class="toggle-code">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-code"
+            </li>
+            <li>
+              <a href="#structure">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-layers"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                  <polyline points="2 17 12 22 22 17" />
+                  <polyline points="2 12 12 17 22 12" />
+                </svg>
+                Structure</a
               >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              Toggle code
-            </div>
-          </summary>
-          <script src="https://gist.github.com/nielsVoogt/5c490e16bc1b63bba29d4ee76477f94d.js"></script>
-        </details>
-      </section>
+            </li>
+            <li>
+              <a href="#input-types">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-align-justify"
+                >
+                  <line x1="21" y1="10" x2="3" y2="10" />
+                  <line x1="21" y1="6" x2="3" y2="6" />
+                  <line x1="21" y1="14" x2="3" y2="14" />
+                  <line x1="21" y1="18" x2="3" y2="18" />
+                </svg>
+                Input types</a
+              >
+            </li>
+            <li>
+              <a href="#checkbox-and-radio">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-check-square"
+                >
+                  <polyline points="9 11 12 14 22 4" />
+                  <path
+                    d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                  />
+                </svg>
+                Checkbox and Radio</a
+              >
+            </li>
+            <li><a href="#fieldset">
+              <svg xmlns="http://www.w3.org/2000/svg" style="transform: rotate(90deg);" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/></svg>
+              Fieldset</a></li>
 
-      <section>
-        <h1>Fieldset</h1>
-        <p>
-          The <code>fieldset</code> is used to group multiple related input
-          fields. All nested <code>.nice-form-group</code> elements within will
-          automaticly have a smaller margin.
-        </p>
+            <li>
+              <a href="#icons">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-feather"
+                >
+                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                  <line x1="16" y1="8" x2="2" y2="22" />
+                  <line x1="17.5" y1="15" x2="9" y2="15" />
+                </svg>
+                Icons</a
+              >
+            </li>
+            <li>
+              <a href="#validation">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-alert-triangle"
+                >
+                  <path
+                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                  />
+                  <line x1="12" y1="9" x2="12" y2="13" />
+                  <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+                Validation</a
+              >
+            </li>
+            <li>
+              <a href="#date">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-calendar"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                Date input</a
+              >
+            </li>
+            <li>
+              <a href="#customization">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-sliders"
+                >
+                  <line x1="4" y1="21" x2="4" y2="14" />
+                  <line x1="4" y1="10" x2="4" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12" y2="3" />
+                  <line x1="20" y1="21" x2="20" y2="16" />
+                  <line x1="20" y1="12" x2="20" y2="3" />
+                  <line x1="1" y1="14" x2="7" y2="14" />
+                  <line x1="9" y1="8" x2="15" y2="8" />
+                  <line x1="17" y1="16" x2="23" y2="16" />
+                </svg>
+                Customization</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <main class="demo-page-content">
 
-        <fieldset class="nice-form-group">
-          <legend>Select your favorite framework</legend>
+        <section id="intro">
+          <h1>Intro</h1>
+        </section>
+
+        <section id="Installation">
+          <h1>Installation</h1>
+        </section>
+
+
+        <section id="structure">
+          <h1>Structure</h1>
+          <p>
+            All you need to do is add the class <code>.nice-form-group</code> to
+            get a nice base style for all your input fields. Add a
+            <code>small</code> element for additional information, this can be
+            below the label or below the field.
+          </p>
+
           <div class="nice-form-group">
-            <input type="radio" name="radio" id="react" />
-            <label for="react">React</label>
+            <label>Basic form group</label>
+            <input type="text" placeholder="Your name" />
           </div>
 
           <div class="nice-form-group">
-            <input type="radio" name="radio" id="vue" />
-            <label for="vue">Vue</label>
+            <label>Basic form group</label>
+            <small>With additional information below the label</small>
+            <input type="text" placeholder="Your name" />
           </div>
 
           <div class="nice-form-group">
-            <input type="radio" name="radio" id="angular" />
-            <label for="angular">Angular</label>
+            <label>My form group label</label>
+            <input type="text" placeholder="Your name" />
+            <small>Or additional text below</small>
           </div>
-        </fieldset>
 
-        <fieldset class="nice-form-group">
-          <legend>Select your favorite languages</legend>
+          <details>
+            <summary>
+              <div class="toggle-code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-code"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Toggle code
+              </div>
+            </summary>
+            <script src="https://gist.github.com/nielsVoogt/a00c2c8b6b7acfacce6d50926379e722.js"></script>
+          </details>
+        </section>
+
+        <section id="input-types">
+          <h1>Input types</h1>
+          <p>All available input types are included</p>
+
           <div class="nice-form-group">
-            <input type="checkbox" id="css" />
-            <label for="css">CSS</label>
+            <label>Text</label>
+            <input type="text" placeholder="Your name" value="" />
           </div>
 
           <div class="nice-form-group">
-            <input type="checkbox" id="html" />
-            <label for="html">HTML</label>
+            <label>Email</label>
+            <input type="email" placeholder="Your email" value="" />
           </div>
 
           <div class="nice-form-group">
-            <input type="checkbox" id="js" />
-            <label for="js">Javascript</label>
+            <label>Phonenumber</label>
+            <input type="tel" placeholder="Your phonenumber" value="" />
           </div>
-        </fieldset>
-        <details>
-          <summary>
-            <div class="toggle-code">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-code"
-              >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              Toggle code
+
+          <div class="nice-form-group">
+            <label>Url</label>
+            <input type="url" placeholder="www.google.com" value="" />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Password</label>
+            <input type="password" placeholder="Your password" />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Search</label>
+            <input type="search" placeholder="Search all the things" value="" />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Disabled field</label>
+            <input type="text" disabled placeholder="Your name" value="" />
+          </div>
+          <details>
+            <summary>
+              <div class="toggle-code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-code"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Toggle code
+              </div>
+            </summary>
+            <script src="https://gist.github.com/nielsVoogt/e25c9c8f2b8456bbd1239b775d21333f.js"></script>
+          </details>
+        </section>
+        
+        <section id="checkbox-and-radio">
+          <h1>Checkbox and Radio</h1>
+          <p>
+            These are your basic <code>input[type="radio"]</code> and
+            <code>input[type="checkbox"]</code> elements. They have a label and
+            can contain secondary information by adding a
+            <code>small</code> element inside the <code>label</code>.
+          </p>
+
+          <fieldset class="nice-form-group">
+            <div class="nice-form-group">
+              <input type="radio" name="radio" id="r-1" />
+              <label for="r-1">Radio button with label</label>
             </div>
-          </summary>
-          <script src="https://gist.github.com/nielsVoogt/e513d0df728dfc3fb1f5f9ecae042bf8.js"></script>
-        </details>
-      </section>
 
-      <section>
-        <h1>Input types</h1>
-        <p>All available input types are included</p>
-
-        <div class="nice-form-group">
-          <label>Text</label>
-          <input type="text" placeholder="Your name" value="" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Email</label>
-          <input type="email" placeholder="Your email" value="" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Phonenumber</label>
-          <input type="tel" placeholder="Your phonenumber" value="" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Url</label>
-          <input type="url" placeholder="www.google.com" value="" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Password</label>
-          <input type="password" placeholder="Your password" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Search</label>
-          <input type="search" placeholder="Search all the things" value="" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Disabled field</label>
-          <input type="text" disabled placeholder="Your name" value="" />
-        </div>
-        <details>
-          <summary>
-            <div class="toggle-code">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-code"
-              >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              Toggle code
+            <div class="nice-form-group">
+              <input type="radio" name="radio" id="r-2" />
+              <label for="r-2">
+                Radio button with label
+                <small>Radio can have additional information</small>
+              </label>
             </div>
-          </summary>
-          <script src="https://gist.github.com/nielsVoogt/e25c9c8f2b8456bbd1239b775d21333f.js"></script>
-        </details>
-      </section>
+          </fieldset>
 
-      <section>
-        <h1>Icons</h1>
-        <p>
-          For some input types it could make sense to show a icon. These icons
-          are hidden by default but can be added by adding either
-          <code>.icon-left</code> or <code>.icon-right</code> to the input
-          element.
-        </p>
-
-        <div class="nice-form-group">
-          <label>Phonenumber</label>
-          <input
-            type="tel"
-            placeholder="Your phonenumber"
-            value=""
-            class="icon-left"
-          />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Url</label>
-          <input
-            type="url"
-            placeholder="www.google.com"
-            value=""
-            class="icon-left"
-          />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Your email"
-            value=""
-            class="icon-left"
-          />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Your password"
-            class="icon-left"
-          />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Phonenumber</label>
-          <input
-            type="tel"
-            placeholder="Your phonenumber"
-            value=""
-            class="icon-right"
-          />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Url</label>
-          <input
-            type="url"
-            placeholder="www.google.com"
-            value=""
-            class="icon-right"
-          />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Your email"
-            value=""
-            class="icon-right"
-          />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Your password"
-            class="icon-right"
-          />
-        </div>
-
-        <details>
-          <summary>
-            <div class="toggle-code">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-code"
-              >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              Toggle code
+          <fieldset class="nice-form-group">
+            <div class="nice-form-group">
+              <input type="checkbox" id="check-1" />
+              <label for="check-1">Checkbox with label</label>
             </div>
-          </summary>
-          <script src="https://gist.github.com/nielsVoogt/8cc4cd8ebc6e81c3f889f1b40037b0cc.js"></script>
-        </details>
 
-      </section>
-
-      <section>
-        <h1>Field Validation</h1>
-        <p>
-          Fields that have a <code>required</code> attribute can be valid or
-          invalid based on their value. When a user focuses on a invalid field
-          the styling is set back to default.
-        </p>
-
-        <div class="nice-form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Your email"
-            value="this is not a email adress"
-            required
-          />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Your email"
-            value="n.voogt@gmail.com"
-            required
-          />
-        </div>
-        <details>
-          <summary>
-            <div class="toggle-code">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-code"
-              >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              Toggle code
+            <div class="nice-form-group">
+              <input type="checkbox" id="check-2" />
+              <label for="check-2">
+                Checkbox with label
+                <small>I am additional information regarding this field</small>
+              </label>
             </div>
-          </summary>
-          <script src="https://gist.github.com/nielsVoogt/75ebf8c12ca420eb2089312a931ab4cf.js"></script>
+          </fieldset>
 
-        </details>
-      </section>
+          <details>
+            <summary>
+              <div class="toggle-code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-code"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Toggle code
+              </div>
+            </summary>
+            <script src="https://gist.github.com/nielsVoogt/5c490e16bc1b63bba29d4ee76477f94d.js"></script>
+          </details>
+        </section>
 
-      <section>
-        <h1>Date fields</h1>
-        <p>
-          Date fields show icons by default. The <code>month</code>,
-          <code>week</code> and <code>date</code> fields have a fixed min width
-          set at 14em. <code>time</code> is set at 7em.
-        </p>
+        <section id="fieldset">
+          <h1>Fieldset</h1>
+          <p>
+            The <code>fieldset</code> is used to group multiple related input
+            fields. All nested <code>.nice-form-group</code> elements within
+            will automaticly have a smaller margin.
+          </p>
 
-        <div class="nice-form-group">
-          <label>Month</label>
-          <input type="month" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Week</label>
-          <input type="week" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Date</label>
-          <input type="date" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Time</label>
-          <input type="time" />
-        </div>
-
-        <details>
-          <summary>
-            <div class="toggle-code">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-code"
-              >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              Toggle code
+          <fieldset class="nice-form-group">
+            <legend>Select your favorite framework</legend>
+            <div class="nice-form-group">
+              <input type="radio" name="radio" id="react" />
+              <label for="react">React</label>
             </div>
-          </summary>
-          <script src="https://gist.github.com/nielsVoogt/2ae279af287e520f545285b0d7c45828.js"></script>
-        </details>
-      </section>
 
-      <section>
-        <h1>Other input types</h1>
-
-        <div class="nice-form-group">
-          <label>Textarea</label>
-          <textarea rows="5" value=""></textarea>
-        </div>
-
-        <div class="nice-form-group">
-          <label>Select</label>
-          <select>
-            <option>Please select a value</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </select>
-        </div>
-
-        <div class="nice-form-group">
-          <label>File upload</label>
-          <input type="file" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Range slider</label>
-          <input type="range" min="0" max="15" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Number</label>
-          <input type="number" placeholder="1234" />
-        </div>
-
-        <div class="nice-form-group">
-          <label>Color</label>
-          <input type="color" />
-        </div>
-
-
-        <details>
-          <summary>
-            <div class="toggle-code">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-code"
-              >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              Toggle code
+            <div class="nice-form-group">
+              <input type="radio" name="radio" id="vue" />
+              <label for="vue">Vue</label>
             </div>
-          </summary>
-          <script src="https://gist.github.com/nielsVoogt/f0480b1a2d0deda02138d61ec5c9f4d0.js"></script>
-        </details>
-      </section>
 
-      <section>
-        <h1>Customization</h1>
-        <p>The styling is highly customizable using css variables.</p>
-      </section>
+            <div class="nice-form-group">
+              <input type="radio" name="radio" id="angular" />
+              <label for="angular">Angular</label>
+            </div>
+          </fieldset>
 
-      <section>
-        <h1>Input only reset</h1>
-        <p>
-          For those of you who do not whish to wrap their inputs in a class there will be a
-          'reset' coming in the near future. This version will omit any <code>.nice-form-group</code>
-          related styling, leaving you only with the input styles.
-        </p>
-      </section>
+          <fieldset class="nice-form-group">
+            <legend>Select your favorite languages</legend>
+            <div class="nice-form-group">
+              <input type="checkbox" id="css" />
+              <label for="css">CSS</label>
+            </div>
 
-      <footer>Made with ♥ for my girl</footer>
-    </main>
+            <div class="nice-form-group">
+              <input type="checkbox" id="html" />
+              <label for="html">HTML</label>
+            </div>
+
+            <div class="nice-form-group">
+              <input type="checkbox" id="js" />
+              <label for="js">Javascript</label>
+            </div>
+          </fieldset>
+          <details>
+            <summary>
+              <div class="toggle-code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-code"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Toggle code
+              </div>
+            </summary>
+            <script src="https://gist.github.com/nielsVoogt/e513d0df728dfc3fb1f5f9ecae042bf8.js"></script>
+          </details>
+        </section>
+
+        <section id="icons">
+          <h1>Icons</h1>
+          <p>
+            For some input types it could make sense to show a icon. These icons
+            are hidden by default but can be added by adding either
+            <code>.icon-left</code> or <code>.icon-right</code> to the input
+            element.
+          </p>
+
+          <div class="nice-form-group">
+            <label>Phonenumber</label>
+            <input
+              type="tel"
+              placeholder="Your phonenumber"
+              value=""
+              class="icon-left"
+            />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Url</label>
+            <input
+              type="url"
+              placeholder="www.google.com"
+              value=""
+              class="icon-left"
+            />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Your email"
+              value=""
+              class="icon-left"
+            />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Your password"
+              class="icon-left"
+            />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Phonenumber</label>
+            <input
+              type="tel"
+              placeholder="Your phonenumber"
+              value=""
+              class="icon-right"
+            />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Url</label>
+            <input
+              type="url"
+              placeholder="www.google.com"
+              value=""
+              class="icon-right"
+            />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Your email"
+              value=""
+              class="icon-right"
+            />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Your password"
+              class="icon-right"
+            />
+          </div>
+
+          <details>
+            <summary>
+              <div class="toggle-code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-code"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Toggle code
+              </div>
+            </summary>
+            <script src="https://gist.github.com/nielsVoogt/8cc4cd8ebc6e81c3f889f1b40037b0cc.js"></script>
+          </details>
+        </section>
+
+        <section id="validation">
+          <h1>Field Validation</h1>
+          <p>
+            Fields that have a <code>required</code> attribute can be valid or
+            invalid based on their value. When a user focuses on a invalid field
+            the styling is set back to default.
+          </p>
+
+          <div class="nice-form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Your email"
+              value="this is not a email adress"
+              required
+            />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Your email"
+              value="n.voogt@gmail.com"
+              required
+            />
+          </div>
+          <details>
+            <summary>
+              <div class="toggle-code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-code"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Toggle code
+              </div>
+            </summary>
+            <script src="https://gist.github.com/nielsVoogt/75ebf8c12ca420eb2089312a931ab4cf.js"></script>
+          </details>
+        </section>
+
+        <section id="date">
+          <h1>Date fields</h1>
+          <p>
+            Date fields show icons by default. The <code>month</code>,
+            <code>week</code> and <code>date</code> fields have a fixed min
+            width set at 14em. <code>time</code> is set at 7em.
+          </p>
+
+          <div class="nice-form-group">
+            <label>Month</label>
+            <input type="month" value="2018-05" />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Week</label>
+            <input type="week" placeholder="" value="2017-W01"/>
+          </div>
+
+          <div class="nice-form-group">
+            <label>Date</label>
+            <input type="date" value="" placeholder=""/>
+          </div>
+
+          <div class="nice-form-group">
+            <label>Time</label>
+            <input type="time" />
+          </div>
+
+          <details>
+            <summary>
+              <div class="toggle-code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-code"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Toggle code
+              </div>
+            </summary>
+            <script src="https://gist.github.com/nielsVoogt/2ae279af287e520f545285b0d7c45828.js"></script>
+          </details>
+        </section>
+
+        <section id="other">
+          <h1>Other input types</h1>
+
+          <div class="nice-form-group">
+            <label>Textarea</label>
+            <textarea rows="5" value=""></textarea>
+          </div>
+
+          <div class="nice-form-group">
+            <label>Select</label>
+            <select>
+              <option>Please select a value</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </div>
+
+          <div class="nice-form-group">
+            <label>File upload</label>
+            <input type="file" />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Range slider</label>
+            <input type="range" min="0" max="15" />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Number</label>
+            <input type="number" placeholder="1234" />
+          </div>
+
+          <div class="nice-form-group">
+            <label>Color</label>
+            <input type="color" />
+          </div>
+
+          <details>
+            <summary>
+              <div class="toggle-code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-code"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Toggle code
+              </div>
+            </summary>
+            <script src="https://gist.github.com/nielsVoogt/f0480b1a2d0deda02138d61ec5c9f4d0.js"></script>
+          </details>
+        </section>
+
+        <section id="customization">
+          <h1>Customization</h1>
+          <p>The styling is highly customizable using css variables.</p>
+        </section>
+
+        <footer>Made with ♥ for CSS</footer>
+      </main>
+    </div>
   </body>
 </html>

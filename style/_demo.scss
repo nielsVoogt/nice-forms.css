@@ -21,14 +21,58 @@ body {
 
 body {
   padding: 20px;
-  background: #dbdde8;
+  background: #f3f0e7;
   font-family: "Roboto", sans-serif;
   color: #4b5563;
 }
 
-main {
-  max-width: 500px;
+.demo-page {
   margin: 0 auto;
+  display: flex;
+  max-width: 60em;
+
+  .demo-page-navigation {
+    width: 20em;
+    padding: 1em;
+
+    nav {
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 2em;
+      background: #ffffff;
+      padding: 1em 1em;
+      border-radius: 0.75rem;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.008),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.012), 0 12.5px 10px rgba(0, 0, 0, 0.015),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.018), 0 41.8px 33.4px rgba(0, 0, 0, 0.022),
+        0 100px 80px rgba(0, 0, 0, 0.03);
+    }
+
+    a {
+      display: flex;
+      padding: .75em 1em;
+      text-decoration: none;
+      border-radius: .25em;
+      color: #374151;
+      align-items: center;
+
+      &:hover {
+        background: #F3F4F6;
+      }
+
+      svg {
+        width: 1.25em;
+        height: 1.25em;
+        margin-right: 1em;
+        color: #1F2937;
+      }
+    }
+  }
+
+  .demo-page-content {
+    padding: 1em;
+    flex: 1;
+  }
 }
 
 footer {
@@ -42,7 +86,7 @@ section {
   border-radius: 0.75rem;
   line-height: 1.6;
   overflow: hidden;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   position: relative;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.008),
     0 6.7px 5.3px rgba(0, 0, 0, 0.012), 0 12.5px 10px rgba(0, 0, 0, 0.015),

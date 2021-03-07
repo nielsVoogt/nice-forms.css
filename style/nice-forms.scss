@@ -23,7 +23,7 @@
   // Valid/invalid
   --nf-invalid-input-border-color: red;
   --nf-invalid-input-background-color: #ffe5e5;
-  --nf-invalid-input-color: var(--nf-invalid-input-border-color);
+  --nf-invalid-input-color: var(--nf-input-color);
   --nf-valid-input-border-color: green;
   --nf-valid-input-background-color: #e5f2e5;
   --nf-valid-input-color: inherit;
@@ -114,8 +114,8 @@
     border-color: var(--nf-input-border-color);
     border-width: var(--nf-input-border-width);
     border-style: var(--nf-input-border-style);
-    appearance: none;
     font-family: var(--nf-input-font-family);
+    box-shadow: none;
     border-radius: var(--nf-input-border-radius);
     border-bottom-width: var(--nf-input-border-bottom-width);
     transition: all 0.15s ease-out;
@@ -124,6 +124,9 @@
     padding: calc(var(--nf-input-size) * 0.75);
     height: calc(var(--nf-input-size) * 2.75);
     line-height: normal;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
     // ------------- VALID/INVALID
 
@@ -304,50 +307,53 @@
 
     // NOTE: for some reason grouping these doesn't work (just like :placeholder)
 
-    &::-webkit-slider-runnable-track {
+    @mixin track {
       width: 100%;
       height: var(--nf-slider-track-height);
       background: var(--nf-slider-track-background);
       border-radius: var(--nf-slider-track-border-radius);
+    }
+
+    @mixin thumb {
+      height: var(--nf-slider-thumb-size);
+      width: var(--nf-slider-thumb-size);
+      border-radius: var(--nf-slider-thumb-size);
+      background: var(--nf-input-focus-border-color);
+      border: var(--nf-slider-thumb-border-width) solid
+        var(--nf-slider-thumb-border-color);
+      appearance: none;
+    }
+
+    @mixin thumb-focus {
+      box-shadow: 0 0 0 3px white inset;
+      border: var(--nf-slider-thumb-border-width) solid
+        var(--nf-slider-thumb-border-color);
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include track;
     }
 
     &::-moz-range-track {
-      width: 100%;
-      height: var(--nf-slider-track-height);
-      background: var(--nf-slider-track-background);
-      border-radius: var(--nf-slider-track-border-radius);
+      @include track;
     }
 
     &::-webkit-slider-thumb {
-      height: var(--nf-slider-thumb-size);
-      width: var(--nf-slider-thumb-size);
-      border-radius: var(--nf-slider-thumb-size);
-      background: var(--nf-input-focus-border-color);
-      border: var(--nf-slider-thumb-border-width) solid
-        var(--nf-slider-thumb-border-color);
-      -webkit-appearance: none;
+      @include thumb;
       margin-top: -7px;
     }
 
-    &:focus::-webkit-slider-thumb {
-      box-shadow: 0 0 0 3px white inset;
-      border: 2px solid var(--nf-input-focus-border-color);
+    &::-moz-range-thumb {
+      @include thumb;
+      // box-sizing: border-box;
     }
 
-    &::-moz-range-thumb {
-      height: var(--nf-slider-thumb-size);
-      width: var(--nf-slider-thumb-size);
-      border-radius: var(--nf-slider-thumb-size);
-      background: var(--nf-input-focus-border-color);
-      border: var(--nf-slider-thumb-border-width) solid
-        var(--nf-slider-thumb-border-color);
-      box-sizing: border-box;
+    &:focus::-webkit-slider-thumb {
+      @include thumb-focus;
     }
 
     &:focus::-moz-range-thumb {
-      box-shadow: 0 0 0 3px white inset;
-      border: var(--nf-slider-thumb-border-width) solid
-        var(--nf-slider-thumb-border-color);
+      @include thumb-focus;
     }
   }
 
@@ -367,14 +373,17 @@
       padding: 5%;
     }
 
-    &::-moz-color-swatch {
+    @mixin swatch {
       border-radius: calc(var(--nf-input-border-radius) / 2);
       border: none;
     }
 
+    &::-moz-color-swatch {
+      @include swatch;
+    }
+
     &::-webkit-color-swatch {
-      border-radius: calc(var(--nf-input-border-radius) / 2);
-      border: none;
+      @include swatch;
     }
   }
 
@@ -388,23 +397,6 @@
 
   > input[type="date"],
   > input[type="week"],
-  > input[type="time"],
-  > input[type="month"] {
-    background-position: right calc(var(--nf-input-size) * 0.75) bottom 50%;
-    background-repeat: no-repeat;
-    background-size: var(--nf-input-size);
-    width: auto;
-
-    &::-webkit-inner-spin-button,
-    &::-webkit-calendar-picker-indicator {
-      opacity: 0;
-      -webkit-appearance: none;
-      cursor: pointer;
-    }
-  }
-
-  > input[type="date"],
-  > input[type="week"],
   > input[type="month"] {
     min-width: 14em;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-calendar'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
@@ -414,6 +406,35 @@
     min-width: 6em;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-clock'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
   }
+
+  > input[type="date"],
+  > input[type="week"],
+  > input[type="time"],
+  > input[type="month"] {
+    background-position: right calc(var(--nf-input-size) * 0.75) bottom 50%;
+    background-repeat: no-repeat;
+    background-size: var(--nf-input-size);
+    width: auto;
+  
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+      -webkit-appearance: none;
+      cursor: pointer;
+      opacity: 0;
+    }
+
+    // FireFox reset
+    // FF has restricted control of styling the date/time inputs.
+    // That's why we don't show icons for FF users, and leave basic styling in place.
+    
+    @-moz-document url-prefix() {
+      min-width: auto;
+      width: auto;
+      background-image: none;
+    }
+  }
+
+
 
   // --------------- TEXAREA
 
