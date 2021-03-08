@@ -1,4 +1,3 @@
-
 .nice-form-group {
   // Input size - used for height/padding calculations
   --nf-input-size: 1rem;
@@ -38,7 +37,7 @@
 
   // Slider variables
   --nf-slider-track-background: #dfdfdf;
-  --nf-slider-track-height: .25rem;
+  --nf-slider-track-height: 0.25rem;
   --nf-slider-thumb-size: calc(var(--nf-slider-track-height) * 4);
   --nf-slider-track-border-radius: var(--nf-slider-track-height);
   --nf-slider-thumb-border-width: 2px;
@@ -73,7 +72,7 @@
     font-weight: normal;
     opacity: 0.75;
     font-size: var(--nf-small-font-size);
-    margin-bottom: calc(var(--nf-input-size) * .75);
+    margin-bottom: calc(var(--nf-input-size) * 0.75);
 
     &:last-child {
       margin-bottom: 0;
@@ -131,7 +130,6 @@
     // ------------- VALID/INVALID
 
     &:required {
-
       &:invalid {
         background-color: var(--nf-invalid-input-background-color);
         border-color: var(--nf-valid-input-border-color);
@@ -222,7 +220,6 @@
       padding: calc(var(--nf-input-size) * 0.75) !important;
     }
   }
-
 
   // ------------ VALIDATION FOR FIELDS THAT ALLOW ICONS
 
@@ -337,7 +334,8 @@
     }
 
     @mixin thumb-focus {
-      box-shadow: 0 0 0 var(--nf-slider-thumb-border-focus-width) var(--nf-slider-thumb-background);
+      box-shadow: 0 0 0 var(--nf-slider-thumb-border-focus-width)
+        var(--nf-slider-thumb-background);
     }
 
     &::-webkit-slider-runnable-track {
@@ -350,7 +348,12 @@
 
     &::-webkit-slider-thumb {
       @include thumb;
-      margin-top: calc((calc(var(--nf-slider-track-height) - var(--nf-slider-thumb-size)) * .5))
+      margin-top: calc(
+        (
+          calc(var(--nf-slider-track-height) - var(--nf-slider-thumb-size)) *
+            0.5
+        )
+      );
     }
 
     &::-moz-range-thumb {
@@ -427,7 +430,7 @@
     background-repeat: no-repeat;
     background-size: var(--nf-input-size);
     width: auto;
-  
+
     &::-webkit-inner-spin-button,
     &::-webkit-calendar-picker-indicator {
       -webkit-appearance: none;
@@ -438,7 +441,7 @@
     // FireFox reset
     // FF has restricted control of styling the date/time inputs.
     // That's why we don't show icons for FF users, and leave basic styling in place.
-    
+
     @-moz-document url-prefix() {
       min-width: auto;
       width: auto;

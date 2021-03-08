@@ -1,8 +1,20 @@
 {
-  "name": "card",
+  "name": "nice-forms.css",
   "description": "A base CSS file for forms and input elements",
   "author": "Niels Voogt <n.voogt@gmail.com>",
   "license": "MIT",
+  "main": "dist/nice-forms.css",
+  "directories": {
+    "doc": "docs"
+  },
+  "bugs": {
+    "url": "https://github.com/nielsVoogt/nice-forms.css/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nielsVoogt/nice-forms.css"
+  },
+  "homepage": "https://nielsvoogt.github.io/nice-forms/",
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -11,8 +23,14 @@
   ],
   "scripts": {
     "dev": "gulp watch",
-    "dist": "gulp compile-dist"
+    "dist": "gulp compile-dist",
+    "release": "npm run dist && npm publish"
   },
+  "keywords": [
+    "forms",
+    "css",
+    "input fields"
+  ],
   "devDependencies": {
     "autoprefixer": "^9.0.0",
     "browser-sync": "^2.26.14",
