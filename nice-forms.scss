@@ -35,11 +35,11 @@
 
   // Slider variables
   --nf-slider-track-background: #dfdfdf;
-  --nf-slider-track-height: calc(var(--nf-input-size) / 3);
-  --nf-slider-thumb-size: calc(var(--nf-input-size) * 1.125);
+  --nf-slider-track-height: .25rem;
+  --nf-slider-thumb-size: calc(var(--nf-slider-track-height) * 4);
   --nf-slider-track-border-radius: var(--nf-slider-track-height);
   --nf-slider-thumb-border-width: 2px;
-  --nf-slider-thumb-border-focus-width: 2px;
+  --nf-slider-thumb-border-focus-width: 1px;
   --nf-slider-thumb-border-color: #ffffff;
   --nf-slider-thumb-background: var(--nf-input-focus-border-color);
 }
@@ -47,7 +47,6 @@
 .nice-form-group {
   display: block;
   margin-top: calc(var(--nf-input-size) * 1.5);
-  position: relative;
   line-height: 1;
 
   // ------------- LABEL
@@ -339,7 +338,7 @@
 
     &::-webkit-slider-thumb {
       @include thumb;
-      margin-top: -7px;
+      margin-top: calc((calc(var(--nf-slider-track-height) - var(--nf-slider-thumb-size)) * .5))
     }
 
     &::-moz-range-thumb {
