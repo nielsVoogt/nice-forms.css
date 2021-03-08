@@ -22,12 +22,14 @@
   --nf-input-background-color: #f9fafb;
 
   // Valid/invalid
-  --nf-invalid-input-border-color: red;
-  --nf-invalid-input-background-color: #ffe5e5;
+  --nf-invalid-input-border-color: var(--nf-input-border-color);
+  --nf-invalid-input-background-color: var(--nf-input-background-color);
   --nf-invalid-input-color: var(--nf-input-color);
-  --nf-valid-input-border-color: green;
-  --nf-valid-input-background-color: #e5f2e5;
+  --nf-valid-input-border-color: var(--nf-input-border-color);
+  --nf-valid-input-background-color: var(--nf-input-background-color);
   --nf-valid-input-color: inherit;
+  --nf-invalid-input-border-bottom-color: red;
+  --nf-valid-input-border-bottom-color: green;
 
   // Label variables
   --nf-label-font-size: var(--nf-small-font-size);
@@ -129,9 +131,11 @@
     // ------------- VALID/INVALID
 
     &:required {
+
       &:invalid {
-        // background-color: var(--nf-invalid-input-background-color);
-        border-bottom-color: var(--nf-invalid-input-border-color);
+        background-color: var(--nf-invalid-input-background-color);
+        border-color: var(--nf-valid-input-border-color);
+        border-bottom-color: var(--nf-invalid-input-border-bottom-color);
         color: var(--nf-invalid-input-color);
 
         // Reset to default when focus
@@ -145,8 +149,9 @@
       }
 
       &:valid {
-        border-bottom-color: var(--nf-valid-input-border-color);
-        // background-color: var(--nf-valid-input-background-color);
+        background-color: var(--nf-valid-input-background-color);
+        border-color: var(--nf-valid-input-border-color);
+        border-bottom-color: var(--nf-valid-input-border-bottom-color);
         color: var(--nf-valid-input-color);
       }
     }
@@ -209,7 +214,12 @@
       padding-right: var(--icon-padding);
       background-size: var(--nf-input-size);
     }
+
+    &:-webkit-autofill {
+      padding: calc(var(--nf-input-size) * 0.75) !important;
+    }
   }
+
 
   // ------------ VALIDATION FOR FIELDS THAT ALLOW ICONS
 
