@@ -130,8 +130,8 @@
 
     &:required {
       &:invalid {
-        background-color: var(--nf-invalid-input-background-color);
-        border-color: var(--nf-invalid-input-border-color);
+        // background-color: var(--nf-invalid-input-background-color);
+        border-bottom-color: var(--nf-invalid-input-border-color);
         color: var(--nf-invalid-input-color);
 
         // Reset to default when focus
@@ -145,8 +145,8 @@
       }
 
       &:valid {
-        border-color: var(--nf-valid-input-border-color);
-        background-color: var(--nf-valid-input-background-color);
+        border-bottom-color: var(--nf-valid-input-border-color);
+        // background-color: var(--nf-valid-input-background-color);
         color: var(--nf-valid-input-color);
       }
     }
