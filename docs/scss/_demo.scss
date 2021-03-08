@@ -106,6 +106,12 @@ section {
     font-size: 1.25rem;
     color: black;
     margin-bottom: 0.75rem;
+
+    &.package-name {
+      font-size: 2rem;
+      margin-bottom: .75rem;
+      margin-top: -.5rem;
+    }
   }
 
   strong {
