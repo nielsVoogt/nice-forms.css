@@ -215,6 +215,9 @@
       background-size: var(--nf-input-size);
     }
 
+    // When a field has a icon and is autofilled, the background image is removed
+    // by the browser. To negate this we reset the padding, not great but okay
+
     &:-webkit-autofill {
       padding: calc(var(--nf-input-size) * 0.75) !important;
     }
