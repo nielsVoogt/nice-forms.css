@@ -2,13 +2,17 @@
   "name": "card",
   "description": "A base CSS file for forms and input elements",
   "author": "Niels Voogt <n.voogt@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
   ],
+  "scripts": {
+    "dev": "gulp watch",
+    "dist": "gulp compile-dist"
+  },
   "devDependencies": {
     "autoprefixer": "^9.0.0",
     "browser-sync": "^2.26.14",
