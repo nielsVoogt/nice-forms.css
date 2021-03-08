@@ -13,6 +13,7 @@ const libSrc = "./nice-forms.scss";
 const libDest = "./dist";
 const docsStyleSrc = "./docs/scss/*.scss";
 const docsStyleDest = "./docs/css";
+const demoSrc = "./docs/index.html"
 
 // ----------- POSTCSS PLUGINS
 
@@ -46,4 +47,5 @@ gulp.task("watch", function () {
   gulp.watch(docsStyleSrc, gulp.series("compile-docs"));
   gulp.watch(libSrc, gulp.series("compile-docs"));
   gulp.watch(docsStyleDest).on("change", browserSync.reload);
+  gulp.watch(demoSrc).on("change", browserSync.reload);
 });
