@@ -20,7 +20,6 @@ body {
 }
 
 body {
-  padding: 20px;
   background: #f3f0e7;
   font-family: "Roboto", sans-serif;
   color: #4b5563;
@@ -29,11 +28,15 @@ body {
 .demo-page {
   margin: 0 auto;
   display: flex;
-  max-width: 60em;
+  max-width: 55em;
 
   .demo-page-navigation {
-    width: 20em;
-    padding: 1em;
+    width: 18em;
+    padding: 2em 1em;
+
+    @media only screen and (max-width: 750px) {
+      display: none;
+    }
 
     nav {
       position: -webkit-sticky; /* Safari */
@@ -70,8 +73,12 @@ body {
   }
 
   .demo-page-content {
-    padding: 1em;
-    flex: 1;
+    padding: 2em 1em;
+    max-width: 100%;
+    
+    @media only screen and (min-width: 750px) {
+      width: calc(100% - 18em);
+    }
   }
 }
 
@@ -80,7 +87,13 @@ footer {
   margin: 2.5em 0;
 }
 
+.href-target {
+  position: absolute;
+  top: -2em;
+}
+
 section {
+  position: relative;
   background: #ffffff;
   padding: 2em;
   border-radius: 0.75rem;
@@ -103,20 +116,27 @@ section {
   p {
     font-size: 0.875rem;
     margin-bottom: 1.5rem;
+
+    
+    > strong {
+      font-weight: 500;
+      color: black;
+    }
+
+    > code {
+      font-weight: 500;
+      font-family: Consolas, monaco, monospace;
+      position: relative;
+      z-index: 1;
+      margin: 0 2px;
+      background: #f3f4f4;
+      content: "";
+      border-radius: 3px;
+      padding: 2px 5px;
+      white-space: nowrap;
+    }
   }
 
-  code {
-    font-weight: 500;
-    font-family: Consolas, monaco, monospace;
-    position: relative;
-    z-index: 1;
-    margin: 0 2px;
-    background: #f3f4f4;
-    content: "";
-    border-radius: 3px;
-    padding: 2px 5px;
-    white-space: nowrap;
-  }
 }
 
 details {
@@ -142,6 +162,10 @@ details {
     font-weight: 500;
     user-select: none;
     cursor: pointer;
+
+    &:hover {
+      background: darken(#10b981, 5%);
+    }
 
     svg {
       display: inline-block;

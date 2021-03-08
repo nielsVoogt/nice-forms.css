@@ -6,8 +6,8 @@
   --nf-small-font-size: calc(var(--nf-input-size) * 0.875);
 
   // Font family
-  --nf-input-font-family: "Roboto", sans-serif;
-  --nf-label-font-family: "Roboto", sans-serif;
+  --nf-input-font-family: inherit;
+  --nf-label-font-family: inherit;
 
   // Input
   --nf-input-color: #20242f;
@@ -36,10 +36,12 @@
   // Slider variables
   --nf-slider-track-background: #dfdfdf;
   --nf-slider-track-height: calc(var(--nf-input-size) / 3);
-  --nf-slider-thumb-size: calc(var(--nf-input-size) * 1.25);
+  --nf-slider-thumb-size: calc(var(--nf-input-size) * 1.125);
   --nf-slider-track-border-radius: var(--nf-slider-track-height);
   --nf-slider-thumb-border-width: 2px;
+  --nf-slider-thumb-border-focus-width: 2px;
   --nf-slider-thumb-border-color: #ffffff;
+  --nf-slider-thumb-background: var(--nf-input-focus-border-color);
 }
 
 .nice-form-group {
@@ -69,9 +71,9 @@
     font-family: var(--nf-input-font-family);
     display: block;
     font-weight: normal;
-    opacity: 0.65;
+    opacity: 0.75;
     font-size: var(--nf-small-font-size);
-    margin-bottom: 0.75rem;
+    margin-bottom: calc(var(--nf-input-size) * .75);
 
     &:last-child {
       margin-bottom: 0;
@@ -124,8 +126,6 @@
     padding: calc(var(--nf-input-size) * 0.75);
     height: calc(var(--nf-input-size) * 2.75);
     line-height: normal;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
 
     // ------------- VALID/INVALID
@@ -318,16 +318,15 @@
       height: var(--nf-slider-thumb-size);
       width: var(--nf-slider-thumb-size);
       border-radius: var(--nf-slider-thumb-size);
-      background: var(--nf-input-focus-border-color);
+      background: var(--nf-slider-thumb-background);
+      border: 0;
       border: var(--nf-slider-thumb-border-width) solid
         var(--nf-slider-thumb-border-color);
       appearance: none;
     }
 
     @mixin thumb-focus {
-      box-shadow: 0 0 0 3px white inset;
-      border: var(--nf-slider-thumb-border-width) solid
-        var(--nf-slider-thumb-border-color);
+      box-shadow: 0 0 0 var(--nf-slider-thumb-border-focus-width) var(--nf-slider-thumb-background);
     }
 
     &::-webkit-slider-runnable-track {
@@ -345,7 +344,7 @@
 
     &::-moz-range-thumb {
       @include thumb;
-      // box-sizing: border-box;
+      box-sizing: border-box;
     }
 
     &:focus::-webkit-slider-thumb {
@@ -360,9 +359,10 @@
   // -------- COLOR
 
   > input[type="color"] {
-    border-color: var(--nf-input-border-color);
+    border: var(--nf-input-border-width) solid var(--nf-input-border-color);
     height: calc(var(--nf-input-size) * 2);
     border-radius: var(--nf-input-border-radius);
+    padding: calc(var(--nf-input-border-width) * 2);
 
     &:focus {
       outline: none;
@@ -433,8 +433,6 @@
       background-image: none;
     }
   }
-
-
 
   // --------------- TEXAREA
 

@@ -13,9 +13,24 @@
           <ul>
             <li>
               <a href="#intro">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-thumbs-up"
+                >
+                  <path
+                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+                  />
+                </svg>
                 Nice forms
-                </a>
+              </a>
             </li>
             <li>
               <a href="#installation">
@@ -103,9 +118,28 @@
                 Checkbox and Radio</a
               >
             </li>
-            <li><a href="#fieldset">
-              <svg xmlns="http://www.w3.org/2000/svg" style="transform: rotate(90deg);" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/></svg>
-              Fieldset</a></li>
+            <li>
+              <a href="#fieldset">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  style="transform: rotate(90deg)"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-columns"
+                >
+                  <path
+                    d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"
+                  />
+                </svg>
+                Fieldset</a
+              >
+            </li>
 
             <li>
               <a href="#icons">
@@ -174,6 +208,28 @@
               >
             </li>
             <li>
+              <a href="#other">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-server"
+                >
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                  <line x1="6" y1="6" x2="6.01" y2="6" />
+                  <line x1="6" y1="18" x2="6.01" y2="18" />
+                </svg>
+                Other input types</a
+              >
+            </li>
+            <li>
               <a href="#customization">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -204,17 +260,21 @@
         </nav>
       </div>
       <main class="demo-page-content">
-
-        <section id="intro">
-          <h1>Intro</h1>
+        <section>
+          <div class="href-target" id="intro"></div>
+          <h1>Nice forms</h1>
+          <p>
+            I like pretty forms and clean HTML 😄 That's why I created <strong>nice-forms.css</strong> to help devs who want to hit the ground running, but don't want to stare at default input fields when doing so 💩
+          </p>
         </section>
 
-        <section id="Installation">
+        <section>
+          <div class="href-target" id="installation"></div>
           <h1>Installation</h1>
         </section>
 
-
-        <section id="structure">
+        <section>
+          <div class="href-target" id="structure"></div>
           <h1>Structure</h1>
           <p>
             All you need to do is add the class <code>.nice-form-group</code> to
@@ -265,7 +325,8 @@
           </details>
         </section>
 
-        <section id="input-types">
+        <section>
+          <div class="href-target" id="input-types"></div>
           <h1>Input types</h1>
           <p>All available input types are included</p>
 
@@ -327,8 +388,9 @@
             <script src="https://gist.github.com/nielsVoogt/e25c9c8f2b8456bbd1239b775d21333f.js"></script>
           </details>
         </section>
-        
-        <section id="checkbox-and-radio">
+
+        <section>
+          <div class="href-target" id="checkbox-and-radio"></div>
           <h1>Checkbox and Radio</h1>
           <p>
             These are your basic <code>input[type="radio"]</code> and
@@ -392,7 +454,8 @@
           </details>
         </section>
 
-        <section id="fieldset">
+        <section>
+          <div class="href-target" id="fieldset"></div>
           <h1>Fieldset</h1>
           <p>
             The <code>fieldset</code> is used to group multiple related input
@@ -460,7 +523,8 @@
           </details>
         </section>
 
-        <section id="icons">
+        <section>
+          <div class="href-target" id="icons"></div>
           <h1>Icons</h1>
           <p>
             For some input types it could make sense to show a icon. These icons
@@ -572,7 +636,8 @@
           </details>
         </section>
 
-        <section id="validation">
+        <section>
+          <div class="href-target" id="validation"></div>
           <h1>Field Validation</h1>
           <p>
             Fields that have a <code>required</code> attribute can be valid or
@@ -624,8 +689,9 @@
           </details>
         </section>
 
-        <section id="date">
-          <h1>Date fields</h1>
+        <section>
+          <div class="href-target" id="date"></div>
+          <h1>Date input</h1>
           <p>
             Date fields show icons by default. The <code>month</code>,
             <code>week</code> and <code>date</code> fields have a fixed min
@@ -639,12 +705,12 @@
 
           <div class="nice-form-group">
             <label>Week</label>
-            <input type="week" placeholder="" value="2017-W01"/>
+            <input type="week" placeholder="" value="2017-W01" />
           </div>
 
           <div class="nice-form-group">
             <label>Date</label>
-            <input type="date" value="" placeholder=""/>
+            <input type="date" value="" placeholder="" />
           </div>
 
           <div class="nice-form-group">
@@ -677,7 +743,8 @@
           </details>
         </section>
 
-        <section id="other">
+        <section>
+          <div class="href-target" id="other"></div>
           <h1>Other input types</h1>
 
           <div class="nice-form-group">
@@ -739,9 +806,34 @@
           </details>
         </section>
 
-        <section id="customization">
+        <section>
+          <div class="href-target" id="customization"></div>
           <h1>Customization</h1>
           <p>The styling is highly customizable using css variables.</p>
+          <script src="https://gist.github.com/nielsVoogt/63daf967a17776d00f5923048cf28daf.js"></script>
+          
+          <!-- <details>
+            <summary>
+              <div class="toggle-code">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-code"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Toggle code
+              </div>
+            </summary>
+          </details> -->
         </section>
 
         <footer>Made with ♥ for CSS</footer>
