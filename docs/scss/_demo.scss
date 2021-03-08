@@ -75,7 +75,7 @@ body {
   .demo-page-content {
     padding: 2em 1em;
     max-width: 100%;
-    
+
     @media only screen and (min-width: 750px) {
       width: calc(100% - 18em);
     }
@@ -101,6 +101,7 @@ section {
   overflow: hidden;
   margin-bottom: 2rem;
   position: relative;
+  font-size: 0.875rem;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.008),
     0 6.7px 5.3px rgba(0, 0, 0, 0.012), 0 12.5px 10px rgba(0, 0, 0, 0.015),
     0 22.3px 17.9px rgba(0, 0, 0, 0.018), 0 41.8px 33.4px rgba(0, 0, 0, 0.022),
@@ -113,28 +114,32 @@ section {
     margin-bottom: 0.75rem;
   }
 
+  strong {
+    font-weight: 500;
+    color: black;
+  }
+
   p {
-    font-size: 0.875rem;
     margin-bottom: 1.5rem;
+  }
 
-    
-    > strong {
-      font-weight: 500;
-      color: black;
-    }
+  code {
+    font-weight: 500;
+    font-family: Consolas, monaco, monospace;
+    position: relative;
+    z-index: 1;
+    margin: 0 2px;
+    background: #f3f4f4;
+    content: "";
+    border-radius: 3px;
+    padding: 2px 5px;
+    white-space: nowrap;
+  }
 
-    > code {
-      font-weight: 500;
-      font-family: Consolas, monaco, monospace;
-      position: relative;
-      z-index: 1;
-      margin: 0 2px;
-      background: #f3f4f4;
-      content: "";
-      border-radius: 3px;
-      padding: 2px 5px;
-      white-space: nowrap;
-    }
+  ul {
+    margin-top: .5em;
+    padding-left: 1em;
+    list-style-type: disc;
   }
 
 }

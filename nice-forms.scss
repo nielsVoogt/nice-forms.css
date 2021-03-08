@@ -1,4 +1,5 @@
-:root {
+
+.nice-form-group {
   // Input size - used for height/padding calculations
   --nf-input-size: 1rem;
 
@@ -42,9 +43,7 @@
   --nf-slider-thumb-border-focus-width: 1px;
   --nf-slider-thumb-border-color: #ffffff;
   --nf-slider-thumb-background: var(--nf-input-focus-border-color);
-}
 
-.nice-form-group {
   display: block;
   margin-top: calc(var(--nf-input-size) * 1.5);
   line-height: 1;
@@ -359,6 +358,7 @@
 
   > input[type="color"] {
     border: var(--nf-input-border-width) solid var(--nf-input-border-color);
+    border-bottom-width: var(--nf-input-border-bottom-width);
     height: calc(var(--nf-input-size) * 2);
     border-radius: var(--nf-input-border-radius);
     padding: calc(var(--nf-input-border-width) * 2);
