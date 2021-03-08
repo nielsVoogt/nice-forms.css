@@ -3,11 +3,20 @@
   "description": "A base CSS file for forms and input elements",
   "author": "Niels Voogt <n.voogt@gmail.com>",
   "license": "ISC",
+  "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+  ],
   "devDependencies": {
+    "autoprefixer": "^9.0.0",
     "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0",
     "sass": "^1.32.8"
   },
-  "dependencies": {
-    "node-sass": "^5.0.0"
-  }
+  "dependencies": {}
 }
