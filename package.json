@@ -4,10 +4,10 @@
   "author": "Niels Voogt <n.voogt@gmail.com>",
   "license": "ISC",
   "browserslist": [
-      ">0.2%",
-      "not dead",
-      "not ie <= 11",
-      "not op_mini all"
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
   ],
   "devDependencies": {
     "autoprefixer": "^9.0.0",
