@@ -468,17 +468,17 @@
     border-radius: calc(var(--nf-input-border-radius) / 2);
     border-width: var(--nf-input-border-width);
     cursor: pointer;
+    background-position: center center;
 
     &:focus:not(:checked) {
-      box-shadow: 0 0 0 1px var(--nf-input-focus-border-color) inset;
+      border: var(--nf-input-border-width) solid
+        var(--nf-input-focus-border-color);
+      outline: none;
+    }
 
-      + label {
-        color: var(--nf-input-focus-border-color);
-
-        small {
-          color: var(--nf-label-color);
-        }
-      }
+    &:hover {
+      border: var(--nf-input-border-width) solid
+        var(--nf-input-focus-border-color);
     }
 
     + label {
@@ -516,6 +516,45 @@
     }
   }
 
+  // --------------- SWITCH
+
+  > input[type="checkbox"].switch {
+    --switch-width: calc(var(--nf-input-size) * 1.75);
+    --switch-orb-size: calc(
+      var(--nf-input-size) - calc(var(--nf-input-border-width) * 6)
+    );
+    --switch-orb-offset: calc(var(--nf-input-border-width) * 2);
+    width: var(--switch-width);
+    height: var(--nf-input-size);
+    border-radius: var(--nf-input-size);
+    position: relative;
+
+    &::after {
+      background: var(--nf-input-border-color);
+      border-radius: var(--switch-orb-size);
+      height: var(--switch-orb-size);
+      left: var(--switch-orb-offset);
+      position: absolute;
+      top: var(--switch-orb-offset);
+      width: var(--switch-orb-size);
+      content: "";
+      transition: all 0.2s ease-out;
+    }
+
+    &:checked {
+      background: none;
+      background-position: initial;
+      background-color: var(--nf-input-focus-border-color);
+
+      &::after {
+        transform: translateX(
+          calc(calc(var(--switch-width) / 2) - var(--switch-orb-offset))
+        );
+        background: white;
+      }
+    }
+  }
+
   // ---------------- FILE
 
   > input[type="file"] {
@@ -538,10 +577,10 @@
       appearance: none;
       padding: 0.5rem;
       border-radius: var(--nf-input-border-radius);
-      font-weight: bold;
       color: white;
       margin-right: 1rem;
       outline: none;
+      font-family: var(--nf-input-font-family);
     }
 
     &::file-selector-button {
