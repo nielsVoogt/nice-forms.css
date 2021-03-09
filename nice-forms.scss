@@ -518,15 +518,17 @@
 
   // --------------- SWITCH
 
+  --switch-orb-size: var(--nf-input-size);
+  --switch-orb-offset: calc(var(--nf-input-border-width) * 2);
+  --switch-width: calc(var(--nf-input-size) * 2.5);
+  --switch-height: calc(
+    calc(var(--nf-input-size) * 1.25) + var(--switch-orb-offset)
+  );
+
   > input[type="checkbox"].switch {
-    --switch-width: calc(var(--nf-input-size) * 1.75);
-    --switch-orb-size: calc(
-      var(--nf-input-size) - calc(var(--nf-input-border-width) * 6)
-    );
-    --switch-orb-offset: calc(var(--nf-input-border-width) * 2);
     width: var(--switch-width);
-    height: var(--nf-input-size);
-    border-radius: var(--nf-input-size);
+    height: var(--switch-height);
+    border-radius: var(--switch-height);
     position: relative;
 
     &::after {
@@ -535,10 +537,15 @@
       height: var(--switch-orb-size);
       left: var(--switch-orb-offset);
       position: absolute;
-      top: var(--switch-orb-offset);
+      top: 50%;
+      transform: translateY(-50%);
       width: var(--switch-orb-size);
       content: "";
       transition: all 0.2s ease-out;
+    }
+
+    + label {
+      margin-top: calc(var(--switch-height) / 10);
     }
 
     &:checked {
@@ -547,9 +554,10 @@
       background-color: var(--nf-input-focus-border-color);
 
       &::after {
-        transform: translateX(
-          calc(calc(var(--switch-width) / 2) - var(--switch-orb-offset))
-        );
+        transform: translateY(-50%)
+          translateX(
+            calc(calc(var(--switch-width) / 2) - var(--switch-orb-offset))
+          );
         background: white;
       }
     }
