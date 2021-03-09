@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 html {
   box-sizing: border-box;
@@ -43,28 +43,29 @@ body {
       position: sticky;
       top: 2em;
       background: #ffffff;
-      padding: 1em 1em;
+      padding: 0.5em;
       border-radius: 0.75rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
-    
+
     a {
       display: flex;
-      padding: .75em 1em;
+      padding: 0.75em 1em;
       text-decoration: none;
-      border-radius: .25em;
+      border-radius: 0.25em;
       color: #374151;
       align-items: center;
 
       &:hover {
-        background: #F3F4F6;
+        background: #f3f4f6;
       }
 
       svg {
         width: 1.25em;
         height: 1.25em;
         margin-right: 1em;
-        color: #1F2937;
+        color: #1f2937;
       }
     }
   }
@@ -94,10 +95,10 @@ footer {
   background: #24292e;
   color: white;
   border-radius: 5px;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   text-decoration: none;
   align-items: center;
-  transition: background .2s ease-out;
+  transition: background 0.2s ease-out;
 
   &:hover {
     background: black;
@@ -106,7 +107,7 @@ footer {
   svg {
     width: 1.125rem;
     height: 1.125rem;
-    margin-right: .75em;
+    margin-right: 0.75em;
   }
 }
 
@@ -120,18 +121,27 @@ section {
   margin-bottom: 2rem;
   position: relative;
   font-size: 0.875rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
   h1 {
     font-weight: 500;
     font-size: 1.25rem;
     color: black;
     margin-bottom: 0.75rem;
 
+    svg {
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -10%;
+      margin-right: 0.25em;
+    }
+
     &.package-name {
       font-size: 2rem;
-      margin-bottom: .75rem;
-      margin-top: -.5rem;
+      margin-bottom: 0.75rem;
+      margin-top: -0.5rem;
     }
   }
 
@@ -141,7 +151,17 @@ section {
   }
 
   p {
-    margin: 1.5rem 0;
+    margin: 0.5rem 0 1.5rem;
+
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #3b4ce2;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   code {
@@ -158,11 +178,10 @@ section {
   }
 
   ul {
-    margin-top: .5em;
+    margin-top: 0.5em;
     padding-left: 1em;
     list-style-type: disc;
   }
-
 }
 
 details {

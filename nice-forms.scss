@@ -48,6 +48,7 @@
   display: block;
   margin-top: calc(var(--nf-input-size) * 1.5);
   line-height: 1;
+  white-space: nowrap;
 
   // ------------- LABEL
 
@@ -58,6 +59,7 @@
     font-size: var(--nf-label-font-size);
     font-family: var(--nf-label-font-family);
     margin-bottom: calc(var(--nf-input-size) / 2);
+    white-space: initial;
 
     + small {
       font-style: initial;
@@ -545,7 +547,7 @@
     }
 
     + label {
-      margin-top: calc(var(--switch-height) / 10);
+      margin-top: calc(var(--switch-height) / 8);
     }
 
     &:checked {
@@ -575,7 +577,8 @@
     outline: none;
     cursor: pointer;
 
-    &:focus {
+    &:focus,
+    &:hover {
       border-color: var(--nf-input-focus-border-color);
     }
 
@@ -589,6 +592,7 @@
       margin-right: 1rem;
       outline: none;
       font-family: var(--nf-input-font-family);
+      cursor: pointer;
     }
 
     &::file-selector-button {
