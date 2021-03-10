@@ -82,7 +82,6 @@ select {
   box-shadow: none;
   border-radius: var(--nf-input-border-radius);
   border-bottom-width: var(--nf-input-border-bottom-width);
-  transition: all 0.15s ease-out;
   color: var(--nf-input-color);
   width: 100%;
   padding: calc(var(--nf-input-size) * 0.75);
@@ -151,6 +150,7 @@ select {
   &:focus {
     outline: none;
     border-color: var(--nf-input-focus-border-color);
+    transition: all 0.15s ease-out;
   }
 }
 
