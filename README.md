@@ -10,11 +10,11 @@ Check out the [demo page](https://nielsvoogt.github.io/nice-forms.css/) for more
 Import nice-forms.css from [unpkg](https://unpkg.com/)
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/nice-forms.css/nice-forms.css/nice-forms.css" />
+<link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.5/dist/nice-forms.css" />
 ```
 Or for the reset only
 ```html
-<link rel="stylesheet" href="https://unpkg.com/nice-forms-reset.css/nice-forms.css/nice-forms.css" />
+<link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.6/dist/nice-forms-reset.css" />
 ```
 
 Or install via [npm](https://www.npmjs.com/package/nice-forms.css).
