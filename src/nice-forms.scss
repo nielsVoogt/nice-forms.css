@@ -12,7 +12,7 @@
   // Input
   --nf-input-color: #20242f;
   --nf-input-border-radius: 0.25rem;
-  --nf-input-placeholder-color: #979cae;
+  --nf-input-placeholder-color: #929292;
   --nf-input-border-color: #c0c4c9;
   --nf-input-border-width: 1px;
   --nf-input-border-style: solid;
@@ -132,7 +132,7 @@
     // ------------- VALID/INVALID
 
     &:required {
-      &:invalid {
+      &:not(:placeholder-shown):invalid {
         background-color: var(--nf-invalid-input-background-color);
         border-color: var(--nf-valid-input-border-color);
         border-bottom-color: var(--nf-invalid-input-border-bottom-color);
@@ -144,11 +144,10 @@
           background-color: var(--nf-input-background-color);
           border-color: var(--nf-input-border-color);
           color: var(--nf-input-color);
-          background-image: none;
         }
       }
 
-      &:valid {
+      &:not(:placeholder-shown):valid {
         background-color: var(--nf-valid-input-background-color);
         border-color: var(--nf-valid-input-border-color);
         border-bottom-color: var(--nf-valid-input-border-bottom-color);
@@ -220,31 +219,6 @@
 
     &:-webkit-autofill {
       padding: calc(var(--nf-input-size) * 0.75) !important;
-    }
-  }
-
-  // ------------ VALIDATION FOR FIELDS THAT ALLOW ICONS
-
-  > input[type="text"],
-  > input[type="email"],
-  > input[type="tel"],
-  > input[type="url"],
-  > input[type="password"] {
-    &:required {
-      &:invalid,
-      &:valid {
-        background-position: right calc(var(--nf-input-size) * 0.75) bottom 50%;
-        background-repeat: no-repeat;
-        background-size: var(--nf-input-size);
-      }
-
-      &:invalid {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='red' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-alert-triangle'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
-      }
-
-      &:valid {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='green' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-      }
     }
   }
 

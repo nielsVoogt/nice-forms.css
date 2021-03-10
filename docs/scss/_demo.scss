@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-html {
-  box-sizing: border-box;
-}
-
 *,
 *:before,
 *:after {
@@ -12,17 +8,15 @@ html {
 
 html {
   font-size: 16px;
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 body {
   background: #f3f0e7;
   font-family: "Roboto", sans-serif;
   color: #4b5563;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .demo-page {
@@ -90,7 +84,8 @@ footer {
   top: -2em;
 }
 
-.to-repo {
+.to-repo,
+.to-reset {
   display: inline-flex;
   background: #24292e;
   color: white;
@@ -108,6 +103,14 @@ footer {
     width: 1.125rem;
     height: 1.125rem;
     margin-right: 0.75em;
+  }
+}
+
+.to-reset {
+  background: #3b4ce2;
+
+  &:hover {
+    background: darken(#3b4ce2, 5%);
   }
 }
 

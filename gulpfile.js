@@ -9,11 +9,11 @@ sass.compiler = require("node-sass");
 
 // ----------- PATHS
 
-const libSrc = "./nice-forms.scss";
-const libDest = "./dist";
+const libSrc = "./src/*.scss";
+const libDest = "./dist/";
 const docsStyleSrc = "./docs/scss/*.scss";
 const docsStyleDest = "./docs/css";
-const demoSrc = "./docs/index.html"
+const demoSrc = "./docs/*.html"
 
 // ----------- POSTCSS PLUGINS
 
@@ -43,9 +43,7 @@ gulp.task("watch", function () {
       baseDir: "./docs/",
     },
   });
-
-  gulp.watch(docsStyleSrc, gulp.series("compile-docs"));
-  gulp.watch(libSrc, gulp.series("compile-docs"));
-  gulp.watch(docsStyleDest).on("change", browserSync.reload);
-  gulp.watch(demoSrc).on("change", browserSync.reload);
+  
+  gulp.watch([docsStyleSrc, libSrc], gulp.series("compile-docs"));
+  gulp.watch([docsStyleDest, demoSrc]).on("change", browserSync.reload);
 });

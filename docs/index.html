@@ -12,27 +12,6 @@
         <nav>
           <ul>
             <li>
-              <a href="#intro">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-thumbs-up"
-                >
-                  <path
-                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
-                  />
-                </svg>
-                Nice forms
-              </a>
-            </li>
-            <li>
               <a href="#installation">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -230,6 +209,12 @@
               >
             </li>
             <li>
+              <a href="#reset">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+                Reset only</a
+              >
+            </li>
+            <li>
               <a href="#customization">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -326,7 +311,7 @@
           <p>
             Import nice-forms.css from <strong>unpkg</strong>
             <br />
-            <code> https://unpkg.com/nice-forms.css </code>
+            <code>https://unpkg.com/nice-forms.css/nice-forms.css</code>
           </p>
           <p>
             Install via <strong>NPM</strong>
@@ -365,7 +350,7 @@
 
           <div class="nice-form-group">
             <label>Basic form group</label>
-            <input type="text" placeholder="Your name" />
+            <input type="text" placeholder="Your name"/>
           </div>
 
           <div class="nice-form-group">
@@ -1040,6 +1025,45 @@
             </summary>
             <script src="https://gist.github.com/nielsVoogt/f0480b1a2d0deda02138d61ec5c9f4d0.js"></script>
           </details>
+        </section>
+
+        <section>
+          <div class="href-target" id="reset"></div>
+          <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+            Reset only
+          </h1>
+          <p>There is also a reset only version available, this version provides styled form fields out of the box without any wrapping class. This does however mean that <code>.icon-left</code>, <code>.icon-right</code> or <code>.switch</code> are not included.</p>
+          <p>
+            Grab the raw CSS <a href="https://raw.githubusercontent.com/nielsVoogt/nice-forms.css/main/dist/nice-forms-reset.css">here</a>, or import the reset from <strong>unpkg</strong> via
+            <code>https://unpkg.com/nice-forms.css/nice-forms-reset.css</code>
+          </p>
+
+          <a
+          href="reset.html"
+          class="to-reset"
+          target="_blank"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-external-link"
+          >
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+          Check out the example page
+        </a>
         </section>
 
         <section>

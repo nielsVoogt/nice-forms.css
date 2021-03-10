@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nice-forms.css</title>
+    <link rel="stylesheet" href="css/reset-only.css" />
+  </head>
+  <body>
+    <input type="text" placeholder="Your name" value="" />
+
+    <input type="email" placeholder="Your email" value="" />
+
+    <input type="tel" placeholder="Your phonenumber" value="" />
+
+    <input type="url" placeholder="www.google.com" value="" />
+
+    <input type="password" placeholder="Your password" />
+
+    <input type="search" placeholder="Search all the things" value="" />
+
+    <input type="text" disabled placeholder="Your name" value="" />
+
+    <input
+      type="email"
+      placeholder="Your email"
+      value="this is not a email adress"
+      required
+    />
+
+    <input
+      type="email"
+      placeholder="Your email"
+      value="nice@forms.com"
+      required
+    />
+
+    <textarea rows="5" placeholder="Your message"></textarea>
+
+    <select>
+      <option>Please select a value</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </select>
+
+    <input type="file" />
+
+    <input type="range" min="0" max="15" />
+
+    <div>
+      <input type="month" value="2018-05" />
+    </div>
+
+    <div>
+      <input type="week" value="2017-W01" />
+    </div>
+
+    <div>
+      <input type="date" value="2018-07-22" />
+    </div>
+
+    <div>
+      <input type="time" value="13:30" />
+    </div>
+
+    <div>
+      <input type="radio" name="radio" id="r-2" />
+      <label for="r-2">
+        Radio button with label
+        <small>Radio can have additional information</small>
+      </label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="check-2" />
+      <label for="check-2">
+        Checkbox with label
+        <small>I am additional information regarding this field</small>
+      </label>
+    </div>
+
+    <fieldset>
+      <legend>Select your favorite framework</legend>
+      <div>
+        <input type="radio" name="radio" id="react" />
+        <label for="react">React</label>
+      </div>
+
+      <div>
+        <input type="radio" name="radio" id="vue" />
+        <label for="vue">Vue</label>
+      </div>
+
+      <div>
+        <input type="radio" name="radio" id="angular" />
+        <label for="angular">Angular</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Select your favorite languages</legend>
+      <div>
+        <input type="checkbox" id="css" />
+        <label for="css">CSS</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="html" />
+        <label for="html">HTML</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="js" />
+        <label for="js">Javascript</label>
+      </div>
+    </fieldset>
+
+    <div>
+      <input type="number" placeholder="1234" />
+    </div>
+
+    <div>
+      <input type="color" />
+    </div>
+  </body>
+</html>

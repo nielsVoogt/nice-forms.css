@@ -1,0 +1,493 @@
+:root {
+  --nf-input-size: 1rem; // Input size - used for height/padding calculations
+
+  --nf-input-font-size: calc(var(--nf-input-size) * 0.875);
+  --nf-small-font-size: calc(var(--nf-input-size) * 0.875);
+  --nf-input-font-family: inherit;
+
+  // Input
+  --nf-input-color: #20242f;
+  --nf-input-border-radius: 0.25rem;
+  --nf-input-placeholder-color: #929292;
+  --nf-input-border-color: #c0c4c9;
+  --nf-input-border-width: 1px;
+  --nf-input-border-style: solid;
+  --nf-input-border-bottom-width: 2px;
+  --nf-input-focus-border-color: #3b4ce2;
+  --nf-input-background-color: #f9fafb;
+
+  // Valid/invalid
+  --nf-invalid-input-border-color: var(--nf-input-border-color);
+  --nf-invalid-input-background-color: var(--nf-input-background-color);
+  --nf-invalid-input-color: var(--nf-input-color);
+  --nf-valid-input-border-color: var(--nf-input-border-color);
+  --nf-valid-input-background-color: var(--nf-input-background-color);
+  --nf-valid-input-color: inherit;
+  --nf-invalid-input-border-bottom-color: red;
+  --nf-valid-input-border-bottom-color: green;
+
+  // Slider variables
+  --nf-slider-track-background: #dfdfdf;
+  --nf-slider-track-height: 0.25rem;
+  --nf-slider-thumb-size: calc(var(--nf-slider-track-height) * 4);
+  --nf-slider-track-border-radius: var(--nf-slider-track-height);
+  --nf-slider-thumb-border-width: 2px;
+  --nf-slider-thumb-border-focus-width: 1px;
+  --nf-slider-thumb-border-color: #ffffff;
+  --nf-slider-thumb-background: var(--nf-input-focus-border-color);
+
+  --nf-switch-orb-size: var(--nf-input-size);
+  --nf-switch-orb-offset: calc(var(--nf-input-border-width) * 2);
+  --nf-switch-width: calc(var(--nf-input-size) * 2.5);
+  --nf-switch-height: calc(
+    calc(var(--nf-input-size) * 1.25) + var(--nf-switch-orb-offset)
+  );
+
+  --icon-padding: calc(var(--nf-input-size) * 2.25);
+}
+
+fieldset {
+  legend {
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  > * {
+    margin-bottom: 0.5em;
+  }
+}
+
+input[type="text"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="week"],
+input[type="time"],
+input[type="month"],
+input[type="search"],
+textarea,
+select {
+  background: var(--nf-input-background-color);
+  font-family: inherit;
+  font-size: var(--nf-input-font-size);
+  border-color: var(--nf-input-border-color);
+  border-width: var(--nf-input-border-width);
+  border-style: var(--nf-input-border-style);
+  font-family: var(--nf-input-font-family);
+  box-shadow: none;
+  border-radius: var(--nf-input-border-radius);
+  border-bottom-width: var(--nf-input-border-bottom-width);
+  transition: all 0.15s ease-out;
+  color: var(--nf-input-color);
+  width: 100%;
+  padding: calc(var(--nf-input-size) * 0.75);
+  height: calc(var(--nf-input-size) * 2.75);
+  line-height: normal;
+  appearance: none;
+
+  // ------------- VALID/INVALID
+
+  &:required {
+    &:not(:placeholder-shown):invalid {
+      background-color: var(--nf-invalid-input-background-color);
+      border-color: var(--nf-valid-input-border-color);
+      border-bottom-color: var(--nf-invalid-input-border-bottom-color);
+      color: var(--nf-invalid-input-color);
+
+      // Reset to default when focus
+
+      &:focus {
+        background-color: var(--nf-input-background-color);
+        border-color: var(--nf-input-border-color);
+        color: var(--nf-input-color);
+        background-image: none;
+      }
+    }
+
+    &:not(:placeholder-shown):valid {
+      background-color: var(--nf-valid-input-background-color);
+      border-color: var(--nf-valid-input-border-color);
+      border-bottom-color: var(--nf-valid-input-border-bottom-color);
+      color: var(--nf-valid-input-color);
+    }
+  }
+
+  // ------------- DISABLED
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+
+  // -------- PLACEHOLDERS
+
+  &::-webkit-input-placeholder {
+    color: var(--nf-input-placeholder-color);
+    letter-spacing: 0;
+  }
+
+  &:-ms-input-placeholder {
+    color: var(--nf-input-placeholder-color);
+    letter-spacing: 0;
+  }
+
+  &::-moz-placeholder {
+    color: var(--nf-input-placeholder-color);
+    letter-spacing: 0;
+  }
+
+  &:-moz-placeholder {
+    color: var(--nf-input-placeholder-color);
+    letter-spacing: 0;
+  }
+
+  // -------- FOCUS
+
+  &:focus {
+    outline: none;
+    border-color: var(--nf-input-focus-border-color);
+  }
+}
+
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"] {
+  --icon-background-offset: calc(var(--nf-input-size) * 0.75);
+  background-position: left var(--icon-background-offset) bottom 50%;
+  background-size: var(--nf-input-size);
+  background-repeat: no-repeat;
+  padding-left: var(--icon-padding);
+
+  &:not(:placeholder-shown) {
+    padding-left: calc(var(--nf-input-size) * 0.75);
+    background-position: left calc(var(--nf-input-size) * -1) bottom 50%;
+  }
+
+  // When a field has a icon and is autofilled, the background image is removed
+  // by the browser. To negate this we reset the padding, not great but okay
+
+  &:-webkit-autofill {
+    padding: calc(var(--nf-input-size) * 0.75) !important;
+  }
+}
+
+// -------- EMAIL
+
+input[type="email"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-at-sign'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94'/%3E%3C/svg%3E");
+}
+
+// -------- TEL
+
+input[type="tel"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-phone'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+}
+
+// -------- URL
+
+input[type="url"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-link'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'/%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'/%3E%3C/svg%3E");
+}
+
+// -------- PASSWORD
+
+input[type="password"] {
+  letter-spacing: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-lock'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E");
+}
+
+// -------- SEARCH
+
+input[type="search"] {
+  &:placeholder-shown {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+    background-position: left calc(var(--nf-input-size) * 0.75) bottom 50%;
+    padding-left: calc(var(--nf-input-size) * 2.25);
+    background-size: var(--nf-input-size);
+    background-repeat: no-repeat;
+  }
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+    width: var(--nf-input-size);
+    height: var(--nf-input-size);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
+  }
+
+  &:focus {
+    padding-left: calc(var(--nf-input-size) * 0.75);
+    background-position: left calc(var(--nf-input-size) * -1) bottom 50%;
+  }
+}
+
+input[type="password"] {
+  letter-spacing: 2px;
+}
+
+// -------- RANGE
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  // NOTE: for some reason grouping these doesn't work (just like :placeholder)
+
+  @mixin track {
+    width: 100%;
+    height: var(--nf-slider-track-height);
+    background: var(--nf-slider-track-background);
+    border-radius: var(--nf-slider-track-border-radius);
+  }
+
+  @mixin thumb {
+    height: var(--nf-slider-thumb-size);
+    width: var(--nf-slider-thumb-size);
+    border-radius: var(--nf-slider-thumb-size);
+    background: var(--nf-slider-thumb-background);
+    border: 0;
+    border: var(--nf-slider-thumb-border-width) solid
+      var(--nf-slider-thumb-border-color);
+    appearance: none;
+  }
+
+  @mixin thumb-focus {
+    box-shadow: 0 0 0 var(--nf-slider-thumb-border-focus-width)
+      var(--nf-slider-thumb-background);
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+  }
+
+  &::-moz-range-track {
+    @include track;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+    margin-top: calc(
+      (calc(var(--nf-slider-track-height) - var(--nf-slider-thumb-size)) * 0.5)
+    );
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+    box-sizing: border-box;
+  }
+
+  &:focus::-webkit-slider-thumb {
+    @include thumb-focus;
+  }
+
+  &:focus::-moz-range-thumb {
+    @include thumb-focus;
+  }
+}
+
+// -------- COLOR
+
+input[type="color"] {
+  border: var(--nf-input-border-width) solid var(--nf-input-border-color);
+  border-bottom-width: var(--nf-input-border-bottom-width);
+  height: calc(var(--nf-input-size) * 2);
+  border-radius: var(--nf-input-border-radius);
+  padding: calc(var(--nf-input-border-width) * 2);
+
+  &:focus {
+    outline: none;
+    border-color: var(--nf-input-focus-border-color);
+  }
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 5%;
+  }
+
+  @mixin swatch {
+    border-radius: calc(var(--nf-input-border-radius) / 2);
+    border: none;
+  }
+
+  &::-moz-color-swatch {
+    @include swatch;
+  }
+
+  &::-webkit-color-swatch {
+    @include swatch;
+  }
+}
+
+// --------------- NUMBER
+
+input[type="number"] {
+  width: auto;
+}
+
+// --------------- DATES
+
+input[type="date"],
+input[type="week"],
+input[type="month"] {
+  min-width: 14em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-calendar'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
+}
+
+input[type="time"] {
+  min-width: 6em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-clock'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
+}
+
+input[type="date"],
+input[type="week"],
+input[type="time"],
+input[type="month"] {
+  background-position: right calc(var(--nf-input-size) * 0.75) bottom 50%;
+  background-repeat: no-repeat;
+  background-size: var(--nf-input-size);
+  width: auto;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  // FireFox reset
+  // FF has restricted control of styling the date/time inputs.
+  // That's why we don't show icons for FF users, and leave basic styling in place.
+
+  @-moz-document url-prefix() {
+    min-width: auto;
+    width: auto;
+    background-image: none;
+  }
+}
+
+// --------------- TEXAREA
+
+textarea {
+  height: auto;
+}
+
+// --------------- CHECKBOX/RADIO
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: var(--nf-input-size);
+  height: var(--nf-input-size);
+  padding: inherit;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: calc(var(--nf-input-border-radius) / 2);
+  border-width: var(--nf-input-border-width);
+  cursor: pointer;
+  background-position: center center;
+
+  &:focus:not(:checked) {
+    border: var(--nf-input-border-width) solid
+      var(--nf-input-focus-border-color);
+    outline: none;
+  }
+
+  &:hover {
+    border: var(--nf-input-border-width) solid
+      var(--nf-input-focus-border-color);
+  }
+
+  + label {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-left: calc(var(--nf-input-size) / 2.5);
+    font-weight: normal;
+    user-select: none;
+    cursor: pointer;
+    max-width: calc(100% - calc(var(--nf-input-size) * 2));
+    line-height: normal;
+
+    > small {
+      font-size: var(--nf-small-font-size);
+      display: block;
+      margin-top: calc(var(--nf-input-size) / 4);
+      opacity: 0.75;
+    }
+  }
+}
+
+input[type="checkbox"] {
+  &:checked {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")
+      no-repeat center center/85%;
+    background-color: var(--nf-input-focus-border-color);
+    border-color: var(--nf-input-focus-border-color);
+  }
+}
+
+input[type="radio"] {
+  border-radius: 100%;
+
+  &:checked {
+    background-color: var(--nf-input-focus-border-color);
+    border-color: var(--nf-input-focus-border-color);
+    box-shadow: 0 0 0 3px white inset;
+  }
+}
+
+// ---------------- FILE
+
+input[type="file"] {
+  background: rgba(0, 0, 0, 0.025);
+  padding: var(--nf-input-size);
+  display: block;
+  width: 100%;
+  border-radius: var(--nf-input-border-radius);
+  border: 1px dashed var(--nf-input-border-color);
+  outline: none;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    border-color: var(--nf-input-focus-border-color);
+  }
+
+  @mixin button {
+    background: var(--nf-input-focus-border-color);
+    border: 0;
+    appearance: none;
+    padding: 0.5rem;
+    border-radius: var(--nf-input-border-radius);
+    color: white;
+    margin-right: 1rem;
+    outline: none;
+    font-family: var(--nf-input-font-family);
+    cursor: pointer;
+  }
+
+  &::file-selector-button {
+    @include button();
+  }
+
+  &::-webkit-file-upload-button {
+    @include button();
+  }
+}
+
+// ---------------- SELECT
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280'  stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-position: right calc(var(--nf-input-size) * 0.75) bottom 50%;
+  background-repeat: no-repeat;
+  background-size: var(--nf-input-size);
+}
