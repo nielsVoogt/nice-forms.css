@@ -4,7 +4,7 @@
   "author": "Niels Voogt <n.voogt@gmail.com>",
   "license": "MIT",
   "main": "dist/nice-forms.css",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "directories": {
     "doc": "docs"
   },

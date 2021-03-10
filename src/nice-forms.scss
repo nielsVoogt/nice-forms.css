@@ -127,7 +127,8 @@
     height: calc(var(--nf-input-size) * 2.75);
     line-height: normal;
     appearance: none;
-
+    transition: all 0.15s ease-out;
+    
     // ------------- VALID/INVALID
 
     &:required {
@@ -188,7 +189,6 @@
     &:focus {
       outline: none;
       border-color: var(--nf-input-focus-border-color);
-      transition: all 0.15s ease-out;
     }
 
     // -------- ADDITIONAL TEXT BENEATH INPUT FIELDS
